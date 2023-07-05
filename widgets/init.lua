@@ -1,4 +1,5 @@
 require("widgets.app_launcher")
+--require("widgets.battery")
 require("widgets.date")
 require("widgets.inbuilt_widgets")
 require("widgets.layout_indicator")
