@@ -96,6 +96,7 @@ ruled.client.connect_signal(
       properties = {
         tag = "",
         switch_to_tags = true,
+        maximized = false,
       }
     }
 
@@ -111,6 +112,7 @@ ruled.client.connect_signal(
       properties = {
         tag = "",
         switch_to_tags = true,
+        maximized = false,
       }
     }
 
@@ -144,6 +146,7 @@ ruled.client.connect_signal(
       properties = {
         tag = "",
         switch_to_tags = true,
+        maximized = false,
       }
     }
 
@@ -160,6 +163,7 @@ ruled.client.connect_signal(
       properties = {
         tag = "龎",
         switch_to_tags = true,
+        maximized = false,
       }
     }
 
@@ -173,6 +177,7 @@ ruled.client.connect_signal(
       properties = {
         tag = "󰚢",
         switch_to_tags = true,
+        maximized = false,
       }
     }
 
@@ -188,6 +193,7 @@ ruled.client.connect_signal(
       properties = {
         tag = "",
         switch_to_tags = true,
+        maximized = false,
       }
     }
 
@@ -202,6 +208,7 @@ ruled.client.connect_signal(
       properties = {
         tag = "煉",
         switch_to_tags = true,
+        maximized = false,
       }
     }
   end
