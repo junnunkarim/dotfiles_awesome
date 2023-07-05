@@ -1,0 +1,9 @@
+[submodule "custom_modules/bling"]
+	path = custom_modules/bling
+	url = https://github.com/BlingCorp/bling
+[submodule "custom_modules/rubato"]
+	path = custom_modules/rubato
+	url = https://github.com/andOrlando/rubato
+[submodule "custom_modules/vicious"]
+	path = custom_modules/vicious
+	url = https://github.com/vicious-widgets/vicious
