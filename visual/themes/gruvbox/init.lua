@@ -1,0 +1,2 @@
+--require("visual.themes.gruvbox.theme")
+--require("visual.themes.gruvbox.wallpaper")

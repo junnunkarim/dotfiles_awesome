@@ -1,0 +1,6 @@
+require("core.error-handling")
+require("core.keymaps")
+require("core.rules")
+require("core.layouts")
+require("core.titlebar")
+require("core.notifications")
