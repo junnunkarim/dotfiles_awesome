@@ -6,12 +6,19 @@ require("visual.themes." .. colorscheme_name .. ".widget_colors")
 
 
 app_launcher = wibox.widget{
-  { -- widget
-    font = "Iosevka Nerd Font Mono 20",
-    markup = '<b> 󰣇 </b>',
-    halign = "center",
-    valign = "center",
-    widget = wibox.widget.textbox
+  {
+    { -- widget
+      font = "Iosevka Nerd Font Mono 20",
+      markup = '<span color="' .. other_colors.dark .. '"><b>󰣇</b></span>',
+      halign = "center",
+      valign = "center",
+      widget = wibox.widget.textbox
+    },
+    margins = {
+      left = 15,
+      right = 15,
+    },
+    widget = wibox.container.margin
   },
   bg = app_launcher_colors.light,
   shape = function(cr, w, h)

@@ -16,6 +16,7 @@ local colors = GRUVBOX
 
 theme.font          = "Iosevka Nerd Font Mono 10"
 theme.taglist_font  = "Iosevka Nerd Font Mono 20"
+theme.tasklist_font  = "Iosevka Nerd Font Mono 20"
 
 theme.bg_normal     = colors.blue1
 theme.bg_focus      = colors.blue2
@@ -35,10 +36,13 @@ theme.border_color_active = colors.blue2
 theme.border_color_marked = "#91231c"
 
 theme.wibar_bg = TRANSPARENT
-theme.wibar_fg = colors.black
+theme.wibar_fg = colors.white
 theme.wibar_border_color = colors.green1
 
 theme.taglist_spacing = 3
+theme.taglist_bg_focus = colors.blue1
+theme.taglist_fg_focus = colors.black
+theme.taglist_fg_occupied = colors.black
 theme.taglist_shape_border_width = 3
 theme.taglist_shape_border_color = TRANSPARENT
 theme.taglist_shape_border_color_focus = colors.blue1

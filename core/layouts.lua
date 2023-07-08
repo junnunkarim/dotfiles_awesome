@@ -27,5 +27,3 @@ tag.connect_signal(
   end
 )
 -- }}}
-
-

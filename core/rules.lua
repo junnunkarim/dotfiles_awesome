@@ -43,7 +43,7 @@ ruled.client.connect_signal(
           "xtightvncviewer",
           "Gpick",
           --"Alacritty",
-          "wezterm",
+          --"wezterm",
           "kitty",
           "Lxappearance",
           "Xfce-polkit",
@@ -61,7 +61,8 @@ ruled.client.connect_signal(
         }
       },
       properties = {
-        floating = true
+        floating = true,
+        placement = awful.placement.centered
       },
     }
 
@@ -76,7 +77,7 @@ ruled.client.connect_signal(
         }
       },
       properties = {
-        titlebars_enabled = true
+        titlebars_enabled = true,
       },
     }
 
@@ -94,9 +95,10 @@ ruled.client.connect_signal(
         }
       },
       properties = {
-        tag = "",
+        tag = function(c) return c.screen.tags[1] end,
         switch_to_tags = true,
         maximized = false,
+        placement = awful.placement.centered,
       }
     }
 
@@ -110,9 +112,10 @@ ruled.client.connect_signal(
         }
       },
       properties = {
-        tag = "",
+        tag = function(c) return c.screen.tags[2] end,
         switch_to_tags = true,
         maximized = false,
+        placement = awful.placement.centered,
       }
     }
 
@@ -127,9 +130,10 @@ ruled.client.connect_signal(
         }
       },
       properties = {
-        tag = "",
+        tag = function(c) return c.screen.tags[3] end,
         switch_to_tags = true,
         maximized = false,
+        placement = awful.placement.centered,
       }
     }
 
@@ -144,9 +148,10 @@ ruled.client.connect_signal(
         }
       },
       properties = {
-        tag = "",
+        tag = function(c) return c.screen.tags[4] end,
         switch_to_tags = true,
         maximized = false,
+        placement = awful.placement.centered,
       }
     }
 
@@ -161,9 +166,10 @@ ruled.client.connect_signal(
         }
       },
       properties = {
-        tag = "龎",
+        tag = function(c) return c.screen.tags[5] end,
         switch_to_tags = true,
         maximized = false,
+        placement = awful.placement.centered,
       }
     }
 
@@ -175,9 +181,10 @@ ruled.client.connect_signal(
         }
       },
       properties = {
-        tag = "󰚢",
+        tag = function(c) return c.screen.tags[6] end,
         switch_to_tags = true,
         maximized = false,
+        placement = awful.placement.centered,
       }
     }
 
@@ -191,9 +198,10 @@ ruled.client.connect_signal(
         }
       },
       properties = {
-        tag = "",
+        tag = function(c) return c.screen.tags[7] end,
         switch_to_tags = true,
         maximized = false,
+        placement = awful.placement.centered,
       }
     }
 
@@ -203,12 +211,14 @@ ruled.client.connect_signal(
         class = {
           "GParted",
           "Xfce4-power-manager-settings",
+          "Lxappearance",
         }
       },
       properties = {
-        tag = "煉",
+        tag = function(c) return c.screen.tags[8] end,
         switch_to_tags = true,
         maximized = false,
+        placement = awful.placement.centered,
       }
     }
   end

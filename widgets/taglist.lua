@@ -6,35 +6,37 @@ local beautiful = require("beautiful")
 require("core.utils")
 
 -- Bling library
-local bling = require("custom_modules.bling")
+local available_bling, bling = pcall(require, "custom_modules.bling")
 -- }}}
 
 require("visual.options")
 require("visual.themes." .. colorscheme_name .. ".widget_colors")
 
 
-bling.widget.tag_preview.enable {
-  show_client_content = true,  -- Whether or not to show the client content
-  x = 50,                       -- The x-coord of the popup
-  y = 10,                       -- The y-coord of the popup
-  scale = 0.25,                 -- The scale of the previews compared to the screen
-  honor_padding = true,        -- Honor padding when creating widget size
-  honor_workarea = true,       -- Honor work area when creating widget size
-  placement_fn = function(c)    -- Place the widget using awful.placement (this overrides x & y)
-    awful.placement.top_left(c, {
-      margins = {
-        top = 50,
-        left = 660
-      }
-    })
-  end,
-  background_widget = wibox.widget {    -- Set a background image (like a wallpaper) for the widget 
-    image = beautiful.wallpaper,
-    horizontal_fit_policy = "fit",
-    vertical_fit_policy = "fit",
-    widget = wibox.widget.imagebox
+if available_bling then
+  bling.widget.tag_preview.enable {
+    show_client_content = true,  -- Whether or not to show the client content
+    x = 50,                       -- The x-coord of the popup
+    y = 10,                       -- The y-coord of the popup
+    scale = 0.25,                 -- The scale of the previews compared to the screen
+    honor_padding = true,        -- Honor padding when creating widget size
+    honor_workarea = true,       -- Honor work area when creating widget size
+    placement_fn = function(c)    -- Place the widget using awful.placement (this overrides x & y)
+      awful.placement.top_left(c, {
+        margins = {
+          top = 50,
+          left = 660
+        }
+      })
+    end,
+    background_widget = wibox.widget {    -- Set a background image (like a wallpaper) for the widget 
+      image = beautiful.wallpaper,
+      horizontal_fit_policy = "fit",
+      vertical_fit_policy = "fit",
+      widget = wibox.widget.imagebox
+    }
   }
-}
+end
 
 get_taglist = function (s)
   -- Create a taglist widget
@@ -49,10 +51,10 @@ get_taglist = function (s)
         gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 20) -- t-left, t-right, b-right, b-left
       end,
 
-      font = "Iosevka Nerd Font Mono 25",
-      bg_focus = taglist_colors.dark,
-      fg_focus = "#282828",
-      fg_occupied = "#ebdbb2",
+      font = "Iosevka Nerd Font Mono 30",
+      --bg_focus = taglist_colors.dark,
+      --fg_focus = "#282828",
+      --fg_occupied = "#ebdbb2",
       --shape_border_width = 0,
       shape_border_color_focus = taglist_colors.dark,
     },
@@ -121,12 +123,14 @@ get_taglist = function (s)
         self:connect_signal(
           'mouse::enter',
           function()
-            -- BLING: Only show widget when there are clients in the tag
-            if #c3:clients() > 0 then
-              -- BLING: Update the widget with the new tag
-              awesome.emit_signal("bling::tag_preview::update", c3)
-              -- BLING: Show the widget
-              awesome.emit_signal("bling::tag_preview::visibility", s, true)
+            if available_bling then
+              -- BLING: Only show widget when there are clients in the tag
+              if #c3:clients() > 0 then
+                -- BLING: Update the widget with the new tag
+                awesome.emit_signal("bling::tag_preview::update", c3)
+                -- BLING: Show the widget
+                awesome.emit_signal("bling::tag_preview::visibility", s, true)
+              end
             end
 
             if self.bg ~= taglist_colors.hover then

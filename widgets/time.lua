@@ -6,12 +6,20 @@ local wibox = require("wibox")
 time_core = wibox.widget{
   { -- layout
     { -- container
-      { -- widget
-        font = "Iosevka Nerd Font Mono 20",
-        markup = "<b>  </b>",
-        halign = "center",
-        valign = "center",
-        widget = wibox.widget.textbox
+      {
+        { -- widget
+          font = "Iosevka Nerd Font Mono 30",
+          markup = '<span color="' .. other_colors.dark .. '"><b></b></span>',
+          fg = "#282828",
+          halign = "center",
+          valign = "center",
+          widget = wibox.widget.textbox
+        },
+        margins = {
+          left = 10,
+          right = 10,
+        },
+        widget = wibox.container.margin
       },
       bg = "#689d6a",
       shape = function(cr, w, h)
@@ -26,9 +34,19 @@ time_core = wibox.widget{
     widget = wibox.container.background,
   },
   { -- container
-    { -- widget
-      font = "Iosevka Nerd Font Mono 15",
-      widget = wibox.widget.textclock(' <b>%I:%M %p</b> ', 61)
+    { -- container
+      { -- widget
+        font = "Iosevka Nerd Font Mono 15",
+        widget = wibox.widget.textclock(
+          '<span color="' .. other_colors.dark .. '"><b>%I:%M %p</b></span>',
+          61
+        )
+      },
+      margins = {
+        left = 10,
+        right = 20,
+      },
+      widget = wibox.container.margin
     },
     bg = "#8ec07c",
     shape = function(cr, w, h)

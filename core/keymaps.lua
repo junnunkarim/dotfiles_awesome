@@ -289,24 +289,29 @@ awful.keyboard.append_global_keybindings (
     awful.key(
       { SUPER, "Shift"}, "Return",
       function()
-        scratch_term:toggle()
-        --awful.spawn(os.getenv("HOME") .. "/.bin/scratchpad")
+        if scratch_term ~= nil then
+          scratch_term:toggle()
+        else
+          awful.spawn(os.getenv("HOME") .. "/.bin/scratchpad")
+        end
       end,
       {description = "Toggle drop-down terminal", group = "Applications"}
     ),
     awful.key(
       { SUPER, "Shift" }, "h",
       function()
-        scratch_btop:toggle()
-        --awful.spawn(os.getenv("HOME") .. "/.bin/scratchpad")
+        if scratch_btop ~= nil then
+          scratch_btop:toggle()
+        end
       end,
       {description="Launch Btop", group="Applications"}
     ),
     awful.key(
       { SUPER, "Shift" }, "BackSpace",
       function()
-        scratch_pass:toggle()
-        --awful.spawn(os.getenv("HOME") .. "/.bin/scratchpad")
+        if scratch_pass ~= nil then
+          scratch_pass:toggle()
+        end
       end,
       {description="Launch KeePassXC", group="Applications"}
     ),

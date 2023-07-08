@@ -14,11 +14,70 @@ screen.connect_signal(
   "request::desktop_decoration",
   function(s)
     -- Each screen has its own tag table.
+    --[[
     awful.tag(
-      { "", "", "", "", "龎", "󰚢", "", "煉", "" },
+      { "", "", "", "", "", "󰚢", "󰸳", "", "󰆩" },
+      -- 󰾔
       s,
       awful.layout.layouts[1]
     )
+    ]]--
+
+    awful.tag.add("", {
+      index = 1,
+      screen = s,
+      layout = awful.layout.suit.max,
+      selected = true,
+    })
+    awful.tag.add("", {
+      index = 2,
+      screen = s,
+      layout = awful.layout.suit.max,
+      selected = true,
+    })
+    awful.tag.add("", {
+      index = 3,
+      screen = s,
+      layout = awful.layout.suit.max,
+      selected = true,
+    })
+    awful.tag.add("", {
+      index = 4,
+      screen = s,
+      layout = awful.layout.suit.max,
+      selected = true,
+    })
+    awful.tag.add("", {
+      index = 5,
+      screen = s,
+      layout = awful.layout.suit.max,
+      selected = true,
+    })
+    awful.tag.add("󰚢", {
+      index = 6,
+      screen = s,
+      layout = awful.layout.suit.max,
+      selected = true,
+    })
+    awful.tag.add("󰸳", {
+      index = 7,
+      screen = s,
+      layout = awful.layout.suit.max,
+      selected = true,
+    })
+    awful.tag.add("", {
+      index = 8,
+      screen = s,
+      layout = awful.layout.suit.max,
+      selected = true,
+    })
+    awful.tag.add("󰆩", {
+      index = 9,
+      screen = s,
+      layout = awful.layout.suit.max,
+      selected = true,
+    })
+
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -51,6 +110,7 @@ screen.connect_signal(
             s.taglist,
             s.layoutbox,
 
+            spacing = 10,
             layout = wibox.layout.fixed.horizontal,
           },
           halign = "center",

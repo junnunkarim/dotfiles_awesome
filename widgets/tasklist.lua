@@ -5,7 +5,7 @@ local wibox = require("wibox")
 require("core.utils")
 
 -- Bling library
-local bling = require("custom_modules.bling")
+local available_bling, bling = pcall(require, "custom_modules.bling")
 -- }}}
 
 require("visual.options")
@@ -13,47 +13,49 @@ require("visual.themes." .. colorscheme_name .. ".widget_colors")
 
 
 --[[
-bling.widget.task_preview.enable {
-  x = 5,                    -- The x-coord of the popup
-  y = 20,                    -- The y-coord of the popup
-  height = 250,              -- The height of the popup
-  width = 250,               -- The width of the popup
-  placement_fn = function(c) -- Place the widget using awful.placement (this overrides x & y)
-  awful.placement.top(
-    c,
-    {
-      margins = {
-        top = 50
+if available_bling then
+  bling.widget.task_preview.enable {
+    x = 5,                    -- The x-coord of the popup
+    y = 20,                    -- The y-coord of the popup
+    height = 250,              -- The height of the popup
+    width = 250,               -- The width of the popup
+    placement_fn = function(c) -- Place the widget using awful.placement (this overrides x & y)
+    awful.placement.top(
+      c,
+      {
+        margins = {
+          top = 50
+        }
       }
-    }
-  )
-  end,
-  widget_structure = {
-    {
+    )
+    end,
+    widget_structure = {
       {
         {
-          id = 'icon_role',
-          widget = awful.widget.clienticon, -- The client icon
+          {
+            id = 'icon_role',
+            widget = awful.widget.clienticon, -- The client icon
+          },
+          {
+            id = 'name_role', -- The client name / title
+            widget = wibox.widget.textbox,
+          },
+          layout = wibox.layout.flex.horizontal
         },
-        {
-          id = 'name_role', -- The client name / title
-          widget = wibox.widget.textbox,
-        },
-        layout = wibox.layout.flex.horizontal
+        widget = wibox.container.margin,
+        margins = 5
       },
-      widget = wibox.container.margin,
-      margins = 5
-    },
-    {
-      id = 'image_role', -- The client preview
-      resize = true,
-      valign = 'center',
-      halign = 'center',
-      widget = wibox.widget.imagebox,
-    },
-    layout = wibox.layout.fixed.vertical
+      {
+        id = 'image_role', -- The client preview
+        resize = true,
+        valign = 'center',
+        halign = 'center',
+        widget = wibox.widget.imagebox,
+      },
+      layout = wibox.layout.fixed.vertical
+    }
   }
-}
+end
 ]]--
 
 get_tasklist = function (s)
@@ -174,17 +176,19 @@ get_tasklist = function (s)
       },
       --[[
       nil,
-      create_callback = function(self, c, index, objects) --luacheck: no unused args
-        self:get_children_by_id('clienticon')[1].client = c
+      if available_bling
+        create_callback = function(self, c, index, objects) --luacheck: no unused args
+          self:get_children_by_id('clienticon')[1].client = c
 
-        -- BLING: Toggle the popup on hover and disable it off hover
-        self:connect_signal('mouse::enter', function()
-            awesome.emit_signal("bling::task_preview::visibility", s, true, c)
-          end)
-          self:connect_signal('mouse::leave', function()
-            awesome.emit_signal("bling::task_preview::visibility", s, false, c)
-          end)
-      end,
+          -- BLING: Toggle the popup on hover and disable it off hover
+          self:connect_signal('mouse::enter', function()
+              awesome.emit_signal("bling::task_preview::visibility", s, true, c)
+            end)
+            self:connect_signal('mouse::leave', function()
+              awesome.emit_signal("bling::task_preview::visibility", s, false, c)
+            end)
+        end,
+      end
       ]]--
       layout = wibox.layout.fixed.vertical,
     },
