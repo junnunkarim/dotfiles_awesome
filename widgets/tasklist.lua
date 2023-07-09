@@ -112,12 +112,6 @@ get_tasklist = function (s)
         end
       ),
     },
-    --[[
-    layout = {
-      spacing = 10,
-      layout = wibox.layout.flex.horizontal
-    },
-    ]]--
     layout = {
       spacing_widget = {
         {
