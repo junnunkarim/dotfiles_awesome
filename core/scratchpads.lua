@@ -4,7 +4,7 @@ local available_rubato, rubato = pcall(require, "custom_modules.rubato") -- Tota
 if available_rubato then
   -- These are example rubato tables. You can use one for just y, just x, or both.
   -- The duration and easing is up to you. Please check out the rubato docs to learn more.
-  local anim_y = rubato.timed {
+  anim_y = rubato.timed {
       pos = 1090,
       rate = 60,
       easing = rubato.quadratic,
@@ -13,7 +13,7 @@ if available_rubato then
       awestore_compat = true -- This option must be set to true.
   }
 
-  local anim_x = rubato.timed {
+  anim_x = rubato.timed {
       pos = -970,
       rate = 60,
       easing = rubato.quadratic,

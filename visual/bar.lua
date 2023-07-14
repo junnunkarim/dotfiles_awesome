@@ -119,6 +119,7 @@ screen.connect_signal(
         { -- Right widgets
           {
             --keyboard_layout,
+            battery,
             time,
             date,
             wibox.widget.systray(),

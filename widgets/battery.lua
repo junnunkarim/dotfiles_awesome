@@ -1,36 +1,77 @@
 local wibox = require("wibox")
+local gears = require("gears")
 local beautiful = require("beautiful")
 
-local vicious = require("vicious")
+local battery_widget = require("custom_modules.upower")
 
-batwidget = wibox.widget.progressbar()
+require("visual.options")
+require("visual.themes." .. colorscheme_name .. ".widget_colors")
 
--- Create wibox with batwidget
-batbox = wibox.layout.margin(
-  wibox.widget{
+
+battery_percent = battery_widget {
+  screen = screen,
+  --device_path = battery_widget.get_BAT0_device_pathline,
+  use_display_device = true,
+  instant_update = true,
+  --widget_template = wibox.widget.textbox,
+  widget_template = {
+    font = "Iosevka Nerd Font Mono, Bold 15",
+    widget = wibox.widget.textbox,
+  }
+}
+
+battery = wibox.widget (
+  {
     {
-      max_value = 1,
-      widget = batwidget,
-      border_width = 0.5,
-      border_color = "#ebdbb2",
-      color = {
-        type = "linear",
-        from = { 0, 0 },
-        to = { 0, 30 },
-        stops = {
-          { 0, "#AECF96" },
-          { 1, "#FF5656" }
-        }
-      }
+      {
+        {
+          {
+            font = "Iosevka Nerd Font Mono 30",
+            markup = '<span color="' .. other_colors.dark .. '"><b></b></span>',
+            halign = "center",
+            valign = "center",
+            widget = wibox.widget.textbox
+          },
+          margins = {
+            left = 10,
+            right = 10,
+          },
+          widget = wibox.container.margin
+        },
+        shape = function(cr, w, h)
+          return gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 20)
+        end,
+        bg = battery_colors.dark,
+        widget = wibox.container.background,
+      },
+      {
+        {
+          battery_percent,
+          fg = other_colors.dark,
+          widget = wibox.container.background,
+        },
+        margins = {
+          left = 10,
+          right = 20,
+        },
+        widget = wibox.container.margin
+      },
+      layout = wibox.layout.fixed.horizontal,
     },
-    forced_height = 10,
-    forced_width = 8,
-    direction = 'east',
-    color = beautiful.fg_widget,
-    layout = wibox.container.rotate
-  },
-  1, 1, 3, 3
+    shape_border_width = 3,
+    shape_border_color = battery_colors.dark,
+    shape = function(cr, w, h)
+      return gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 20)
+    end,
+    bg = battery_colors.light,
+    widget = wibox.container.background,
+  }
 )
 
--- Register battery widget
-vicious.register(batwidget, vicious.widgets.bat, "$2", 61, "BAT0")
+
+
+-- When UPower updates the battery status, the widget is notified
+-- and calls a signal you need to connect to:
+battery_percent:connect_signal('upower::update', function (widget, device)
+    widget.text = string.format('%3d', device.percentage) .. '%'
+end)

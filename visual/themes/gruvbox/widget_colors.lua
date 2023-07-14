@@ -7,6 +7,11 @@ app_launcher_colors = {
   dark = colors.red1,
 }
 
+battery_colors = {
+  light = colors.yellow2,
+  dark = colors.yellow1,
+}
+
 time_colors = {
   light = colors.aqua2,
   dark = colors.aqua1,

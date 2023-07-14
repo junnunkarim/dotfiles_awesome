@@ -178,6 +178,7 @@ ruled.client.connect_signal(
       rule_any = {
         class = {
           "KotatogramDesktop",
+          "TelegramDesktop",
         }
       },
       properties = {
