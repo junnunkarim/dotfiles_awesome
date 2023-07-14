@@ -168,6 +168,7 @@ get_tasklist = function (s)
         },
         widget  = wibox.container.margin
       },
+      layout = wibox.layout.fixed.vertical,
       --[[
       nil,
       if available_bling
@@ -184,7 +185,6 @@ get_tasklist = function (s)
         end,
       end
       ]]--
-      layout = wibox.layout.fixed.vertical,
     },
   }
 

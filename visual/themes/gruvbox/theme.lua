@@ -47,6 +47,9 @@ theme.taglist_shape_border_width = 3
 theme.taglist_shape_border_color = TRANSPARENT
 theme.taglist_shape_border_color_focus = colors.blue1
 
+
+theme.bg_systray = colors.red1
+
 -- There are other variable sets
 -- overriding the default one when
 -- defined, the sets are:
@@ -59,7 +62,7 @@ theme.taglist_shape_border_color_focus = colors.blue1
 -- Example:
 --theme.taglist_bg_focus = "#ff0000"
 
-theme.tasklist_disable_icon = true
+--theme.tasklist_disable_icon = true
 
 -- Generate taglist squares:
 local taglist_square_size = dpi(6)

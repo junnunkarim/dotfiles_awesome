@@ -8,8 +8,8 @@ app_launcher_colors = {
 }
 
 battery_colors = {
-  light = colors.yellow2,
-  dark = colors.yellow1,
+  light = colors.purple2,
+  dark = colors.purple1,
 }
 
 time_colors = {
@@ -18,8 +18,8 @@ time_colors = {
 }
 
 date_colors = {
-  light = colors.purple2,
-  dark = colors.purple1,
+  light = colors.yellow2,
+  dark = colors.yellow1,
 }
 
 taglist_colors = {
@@ -31,6 +31,11 @@ taglist_colors = {
 tasklist_colors = {
   light = colors.orange2,
   dark = colors.orange1,
+}
+
+tray_colors = {
+  light = colors.red2,
+  dark = colors.red1,
 }
 
 other_colors = {

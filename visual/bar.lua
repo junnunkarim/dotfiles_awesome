@@ -88,6 +88,8 @@ screen.connect_signal(
 
     s.tasklist = get_tasklist(s)
 
+    s.systray = get_systray(s)
+
     -- main bar
     -- Create the wibox
     s.mywibox = awful.wibar {
@@ -122,7 +124,7 @@ screen.connect_signal(
             battery,
             time,
             date,
-            wibox.widget.systray(),
+            s.systray,
 
             spacing = 10,
             layout = wibox.layout.fixed.horizontal,

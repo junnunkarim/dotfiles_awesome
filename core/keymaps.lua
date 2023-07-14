@@ -169,23 +169,46 @@ local global_keybindings = {
     }
   ),
   awful.key(
-    { SUPER, "Shift" }, "BackSpace",
-    function()
-      if scratch_pass ~= nil then
-        scratch_pass:toggle()
-      end
-    end,
-    {description="Launch KeePassXC", group="Applications"}
+    {
+      modifiers = { SUPER, "Shift" },
+      key = "BackSpace",
+      on_press =
+        function()
+          if scratch_pass ~= nil then
+            scratch_pass:toggle()
+          end
+        end,
+      description="Launch KeePassXC",
+      group="Applications",
+    }
   ),
 
   awful.key(
-    { SUPER, }, "b",
-    function()
-      for s in screen do
-        s.mywibox.visible = not s.mywibox.visible
-      end
-    end,
-    {description = "Toggle bar", group = "awesome"}
+    {
+      modifiers = { SUPER, },
+      key = "b",
+      on_press =
+        function()
+          for s in screen do
+            s.mywibox.visible = not s.mywibox.visible
+          end
+        end,
+      description = "Toggle bar",
+      group = "awesome",
+    }
+  ),
+
+  awful.key(
+    {
+      modifiers = { SUPER, "Shift" },
+      key = "t",
+      on_press =
+        function()
+          awful.screen.focused().systray.visible = not awful.screen.focused().systray.visible
+        end,
+      description = "Toggle systray visiblity",
+      group = "awesome",
+    }
   ),
   --awful.key({ SUPER },            "r",     function () awful.screen.focused().mypromptbox:run() end,
   --          {description = "run prompt", group = "Launcher"}),
