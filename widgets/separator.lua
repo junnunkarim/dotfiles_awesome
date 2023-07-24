@@ -3,7 +3,7 @@ local wibox = require("wibox")
 
 separator = wibox.widget{
   font = "Iosevka Nerd Font Mono 20",
-  markup = " ",
+  text = "                   ",
   halign = "center",
   valign = "center",
   widget = wibox.widget.textbox

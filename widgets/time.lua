@@ -7,7 +7,7 @@ require("visual.themes." .. colorscheme_name .. ".widget_colors")
 
 time_core = wibox.widget{
   { -- layout
-    { -- container
+    { -- margin
       { -- widget
         font = "Iosevka Nerd Font Mono 30",
         markup = '<span color="' .. other_colors.dark .. '"><b></b></span>',
@@ -27,7 +27,7 @@ time_core = wibox.widget{
     end,
     widget = wibox.container.background,
   },
-  { -- container
+  { -- margin
     { -- widget
       font = "Iosevka Nerd Font Mono 15",
       widget = wibox.widget.textclock(
@@ -45,9 +45,8 @@ time_core = wibox.widget{
 }
 
 time = wibox.widget {
-  {
-    widget = time_core,
-  },
+  time_core,
+
   shape = function(cr, w, h)
     return gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 20)
   end,

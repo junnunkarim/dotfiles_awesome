@@ -7,7 +7,7 @@ require("visual.themes." .. colorscheme_name .. ".widget_colors")
 
 date_core = wibox.widget{
   { -- layout
-    { -- container
+    { -- margin
       { -- widget
         font = "Iosevka Nerd Font Mono 30",
         markup = '<span color="' .. other_colors.dark .. '"><b></b></span>',
@@ -27,11 +27,11 @@ date_core = wibox.widget{
     end,
     widget = wibox.container.background,
   },
-  { -- container
+  { -- margin
     { -- widget
       font = "Iosevka Nerd Font Mono 15",
       widget = wibox.widget.textclock(
-        '<span color="' .. other_colors.dark .. '"><b>%a/%d-%m-%Y</b></span>',
+        '<span color="' .. other_colors.dark .. '"><b>%a|%d-%m-%Y</b></span>',
         43200
       )
     },
@@ -45,9 +45,8 @@ date_core = wibox.widget{
 }
 
 date = wibox.widget {
-  {
-    widget = date_core,
-  },
+  date_core,
+
   shape = function(cr, w, h)
     return gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 20)
   end,

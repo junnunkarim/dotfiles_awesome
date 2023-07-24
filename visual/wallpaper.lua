@@ -19,7 +19,7 @@ if available then
   bling.module.wallpaper.setup {
     wallpaper = wallpaper_names,
     position = "maximized",
-    change_timer = 600,
+    change_timer = 1200,
   }
 else
   -- {{{ Wallpaper
@@ -29,8 +29,8 @@ else
       widget = {
         {
           image     = wall_directory .. "mist_forest_nord.jpg",
-          upscale   = true,
-          downscale = true,
+          --upscale   = true,
+          --downscale = true,
           widget    = wibox.widget.imagebox,
         },
         valign = "center",

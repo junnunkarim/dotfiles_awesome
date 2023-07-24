@@ -1,3 +1,4 @@
+local awful = require("awful")
 local gears = require("gears")
 local wibox = require("wibox")
 
@@ -13,6 +14,15 @@ app_launcher = wibox.widget{
       halign = "center",
       valign = "center",
       widget = wibox.widget.textbox
+    },
+
+    buttons = {
+      awful.button(
+        { }, 1,
+        function()
+          awful.spawn(os.getenv("HOME") .. "/.bin/rofi_run")
+        end
+      ),
     },
     margins = {
       left = 15,

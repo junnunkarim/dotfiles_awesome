@@ -13,7 +13,6 @@ battery_percent = battery_widget {
   --device_path = battery_widget.get_BAT0_device_pathline,
   use_display_device = true,
   instant_update = true,
-  --widget_template = wibox.widget.textbox,
   widget_template = {
     font = "Iosevka Nerd Font Mono, Bold 15",
     widget = wibox.widget.textbox,
@@ -21,11 +20,11 @@ battery_percent = battery_widget {
 }
 
 battery = wibox.widget (
-  {
-    {
-      {
-        {
-          {
+  { -- background
+    { -- layout
+      { -- background
+        { -- margin
+          { -- widget
             font = "Iosevka Nerd Font Mono 30",
             markup = '<span color="' .. other_colors.dark .. '"><b></b></span>',
             halign = "center",
@@ -44,9 +43,10 @@ battery = wibox.widget (
         bg = battery_colors.dark,
         widget = wibox.container.background,
       },
-      {
+      { -- margin
         {
           battery_percent,
+
           fg = other_colors.dark,
           widget = wibox.container.background,
         },

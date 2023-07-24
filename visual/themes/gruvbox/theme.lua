@@ -36,8 +36,8 @@ theme.border_color_active = colors.blue2
 theme.border_color_marked = "#91231c"
 
 theme.wibar_bg = TRANSPARENT
-theme.wibar_fg = colors.white
-theme.wibar_border_color = colors.green1
+--theme.wibar_fg = colors.white
+--theme.wibar_border_color = colors.green1
 
 theme.taglist_spacing = 3
 theme.taglist_bg_focus = colors.blue1
@@ -48,7 +48,7 @@ theme.taglist_shape_border_color = TRANSPARENT
 theme.taglist_shape_border_color_focus = colors.blue1
 
 
-theme.bg_systray = colors.red1
+theme.bg_systray = TRANSPARENT
 
 -- There are other variable sets
 -- overriding the default one when

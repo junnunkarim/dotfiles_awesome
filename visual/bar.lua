@@ -1,6 +1,7 @@
 local awful = require("awful")
 local beautiful = require("beautiful")
 local wibox = require("wibox")
+local gears = require("gears")
 
 require("widgets")
 require("core.utils")
@@ -33,49 +34,49 @@ screen.connect_signal(
       index = 2,
       screen = s,
       layout = awful.layout.suit.max,
-      selected = true,
+      --selected = true,
     })
     awful.tag.add("", {
       index = 3,
       screen = s,
       layout = awful.layout.suit.max,
-      selected = true,
+      --selected = true,
     })
     awful.tag.add("", {
       index = 4,
       screen = s,
       layout = awful.layout.suit.max,
-      selected = true,
+      --selected = true,
     })
     awful.tag.add("", {
       index = 5,
       screen = s,
       layout = awful.layout.suit.max,
-      selected = true,
+      --selected = true,
     })
     awful.tag.add("󰚢", {
       index = 6,
       screen = s,
       layout = awful.layout.suit.max,
-      selected = true,
+      --selected = true,
     })
     awful.tag.add("󰸳", {
       index = 7,
       screen = s,
       layout = awful.layout.suit.max,
-      selected = true,
+      --selected = true,
     })
     awful.tag.add("", {
       index = 8,
       screen = s,
       layout = awful.layout.suit.max,
-      selected = true,
+      --selected = true,
     })
     awful.tag.add("󰆩", {
       index = 9,
       screen = s,
       layout = awful.layout.suit.max,
-      selected = true,
+      --selected = true,
     })
 
 
@@ -100,6 +101,7 @@ screen.connect_signal(
             app_launcher,
             s.tasklist,
             s.mypromptbox,
+            separator,
 
             spacing = 10,
             layout = wibox.layout.fixed.horizontal,
@@ -134,18 +136,21 @@ screen.connect_signal(
         },
         layout = wibox.layout.align.horizontal,
       },
-      screen = s,
+      --screen = s,
+      --bg = TRANSPARENT,
+      bg = GRUVBOX.black,
       position = "top",
       height = 35,
-      border_width = 0,
+      border_width = 5,
+      border_color = GRUVBOX.black,
       margins = {
         top = beautiful.useless_gap + beautiful.border_width,
         left = beautiful.useless_gap + beautiful.border_width,
         right = beautiful.useless_gap + beautiful.border_width,
       },
-      --shape = function(cr, w, h)
-        --gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 20) -- t-left, t-right, b-right, b-left
-      --end,
+      shape = function(cr, w, h)
+        gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 20) -- t-left, t-right, b-right, b-left
+      end,
     }
   end
 )

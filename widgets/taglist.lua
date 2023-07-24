@@ -1,7 +1,6 @@
 local awful = require("awful")
 local gears = require("gears")
 local wibox = require("wibox")
-local beautiful = require("beautiful")
 
 require("core.utils")
 
@@ -13,6 +12,7 @@ require("visual.options")
 require("visual.themes." .. colorscheme_name .. ".widget_colors")
 
 
+--[[
 if available_bling then
   bling.widget.tag_preview.enable {
     show_client_content = true,  -- Whether or not to show the client content
@@ -37,6 +37,7 @@ if available_bling then
     }
   }
 end
+]]--
 
 get_taglist = function (s)
   -- Create a taglist widget
@@ -99,30 +100,30 @@ get_taglist = function (s)
       ),
     },
     widget_template = {
-      {
-        {
-          {
-            id = "text_role",
-            align = "center",
-            --markup = "DD",
-            valign = "center",
-            widget = wibox.widget.textbox,
-          },
-          margins = {
-            left = 10,
-            right = 10,
-          },
-          widget = wibox.container.margin,
+      { -- background
+        { -- margin
+          id = "text_role",
+          align = "center",
+          valign = "center",
+          widget = wibox.widget.textbox,
         },
-        widget = wibox.container.background
+        margins = {
+          left = 10,
+          right = 10,
+        },
+        widget = wibox.container.margin,
       },
+      id = "background_role",
+      widget = wibox.container.background,
+
       -- Add support for hover colors and an index label
       create_callback = function(self, c3, text, objects) --luacheck: no unused args
         --self:get_children_by_id('index_role')[1].markup = '<b> '..index..' </b>'
-        self:get_children_by_id('text_role')[1].markup = '<b> '..text..' </b>'
+        --self:get_children_by_id('text_role')[1].markup = '<b> '..text..' </b>'
         self:connect_signal(
           'mouse::enter',
           function()
+            --[[
             if available_bling then
               -- BLING: Only show widget when there are clients in the tag
               if #c3:clients() > 0 then
@@ -132,42 +133,44 @@ get_taglist = function (s)
                 awesome.emit_signal("bling::tag_preview::visibility", s, true)
               end
             end
+            ]]--
 
             if self.bg ~= taglist_colors.hover then
               self.backup = self.bg
+              self.backup_shape_border_color = self.shape_border_color
               self.has_backup = true
             end
+
             self.bg = taglist_colors.hover
+            self.shape_border_color = taglist_colors.hover
           end
         )
         self:connect_signal(
           'mouse::leave',
           function()
             -- BLING: Turn the widget off
-            awesome.emit_signal("bling::tag_preview::visibility", s, false)
+            --awesome.emit_signal("bling::tag_preview::visibility", s, false)
 
             if self.has_backup then
               self.bg = self.backup
+              self.shape_border_color = self.backup_shape_border_color
             end
           end
         )
       end,
 
+      --[[
       update_callback = function(self, c3, text, objects) --luacheck: no unused args
         --self:get_children_by_id('index_role')[1].markup = '<b> '..index..' </b>'
         self:get_children_by_id('text_role')[1].markup = '<b> '..text..' </b>'
       end,
-
-      id = "background_role",
-      widget = wibox.container.background,
+      ]]--
     },
   }
 
   taglist = wibox.widget {
-    {
-      {
-        widget = taglist_core,
-      },
+    { -- margin
+      taglist_core,
       margins = {
         left = 10,
         right = 10,

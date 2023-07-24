@@ -69,7 +69,6 @@ get_tasklist = function (s)
       end,
 
       font = "Iosevka Nerd Font Mono 13",
-      icon_size = 25,
       bg_normal = tasklist_colors.light,
       fg_normal = other_colors.gray,
       bg_focus = tasklist_colors.dark,
@@ -112,79 +111,27 @@ get_tasklist = function (s)
         end
       ),
     },
-    layout = {
-      spacing_widget = {
-        {
-          --forced_width = 5,
-          forced_height = 20,
-          --thickness = 2,
-          color = tasklist_colors.dark,
-          widget = wibox.widget.separator
-        },
-        valign = 'center',
-        halign = 'center',
-        widget = wibox.container.place,
-      },
-      spacing = 1,
-      layout  = wibox.layout.fixed.horizontal
-    },
-    --[[
     widget_template = {
-      {
-        {
-          {
-            id = "text_role",
-            widget = wibox.widget.textbox,
-          },
-          layout = wibox.layout.flex.horizontal,
-        },
-        margins = {
-          left = 10,
-          right = 10,
-        },
-        widget = wibox.container.margin
-      },
-      id = "background_role",
-      widget = wibox.container.background,
-    },
-    ]]--
-    widget_template = {
-      {
-        --wibox.widget.base.make_widget(),
-        forced_height = 8,
-        id = 'background_role',
-        widget = wibox.container.background,
-      },
       {
         {
           id = 'clienticon',
+          forced_height = 25,
+          forced_width = 25,
+          scaling_quality = "fast",
+          halign = "center",
+          valign = "center",
           widget = awful.widget.clienticon,
         },
         margins = {
           left = 10,
           right = 10,
-          bottom = 5,
+          bottom = 2,
           top = 2,
         },
         widget  = wibox.container.margin
       },
-      layout = wibox.layout.fixed.vertical,
-      --[[
-      nil,
-      if available_bling
-        create_callback = function(self, c, index, objects) --luacheck: no unused args
-          self:get_children_by_id('clienticon')[1].client = c
-
-          -- BLING: Toggle the popup on hover and disable it off hover
-          self:connect_signal('mouse::enter', function()
-              awesome.emit_signal("bling::task_preview::visibility", s, true, c)
-            end)
-            self:connect_signal('mouse::leave', function()
-              awesome.emit_signal("bling::task_preview::visibility", s, false, c)
-            end)
-        end,
-      end
-      ]]--
+      id = 'background_role',
+      widget = wibox.container.background,
     },
   }
 

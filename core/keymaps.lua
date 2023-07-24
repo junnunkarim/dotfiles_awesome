@@ -1,4 +1,5 @@
 local awful = require("awful")
+local naughty = require("naughty")
 local hotkeys_popup = require("awful.hotkeys_popup")
 
 require("core.utils")
@@ -297,10 +298,11 @@ local global_keybindings = {
   awful.key(
     { SUPER, }, "grave",
     function()
-      local focused = awful.screen.focused()
-      while #focused.tags do -- gets tag size
+      local focused = awful.screen.focused() -- gets current focused screen
+      --naughty.notification {text=tostring(#focused.tags)}
+      for i = 1, #focused.tags do -- gets tag count
         awful.tag.viewidx(-1, focused)
-        if #focused.clients > 0 then
+        if #focused.clients > 0 then -- if client count is greater than 0
           return
         end
       end
@@ -310,11 +312,11 @@ local global_keybindings = {
   awful.key(
     { SUPER, }, "Tab",
     function()
-    -- tag_view_nonempty(1)
       local focused = awful.screen.focused()
-      while focused.tags do
+      --naughty.notification {text=tostring(focused.tags)}
+      for i = 1, #focused.tags do -- gets tag count
         awful.tag.viewidx(1, focused)
-        if #focused.clients > 0 then
+        if #focused.clients > 0 then -- if client count is greater than 0
           return
         end
       end

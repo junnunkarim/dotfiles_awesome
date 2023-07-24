@@ -4,7 +4,7 @@
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
 pcall(require, "luarocks.loader")
 
-require("awful.autofocus")
+--require("awful.autofocus")
 
 require("core")
 require("visual")

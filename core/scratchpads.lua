@@ -31,7 +31,7 @@ if available_bling then
         instance = "scratch_term"
       }, -- The rule that the scratchpad will be searched by
       sticky = false, -- Whether the scratchpad should be sticky
-      autoclose = false, -- Whether it should hide itself when losing focus
+      autoclose = true, -- Whether it should hide itself when losing focus
       floating = true, -- Whether it should be floating (MUST BE TRUE FOR ANIMATIONS)
       geometry = {
         x = 350,
@@ -55,7 +55,7 @@ if available_bling then
         instance = "scratch_btop"
       },
       sticky = false,
-      autoclose = false,
+      autoclose = true,
       floating = true,
       geometry = {
         x = 350,
@@ -79,7 +79,7 @@ if available_bling then
         instance = "keepassxc"
       },
       sticky = false,
-      autoclose = false,
+      autoclose = true,
       floating = true,
       geometry = {
         x = 350,
