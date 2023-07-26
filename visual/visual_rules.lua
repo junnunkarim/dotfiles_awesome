@@ -4,8 +4,7 @@ local beautiful = require("beautiful")
 require("visual.options")
 
 -- Themes define colours, icons, font and wallpapers.
---beautiful.init(os.getenv("HOME") .. "/.config/awesome/themes/default/theme.lua")
-beautiful.init(os.getenv("HOME") .. "/.config/awesome/visual/themes/" .. colorscheme_name .. "/theme.lua")
+beautiful.init(os.getenv("HOME") .. "/.config/awesome/visual/themes/" .. THEME .. "/theme.lua")
 
 -- round borders
 -- -------------

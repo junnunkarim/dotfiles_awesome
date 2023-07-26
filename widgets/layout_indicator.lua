@@ -5,7 +5,7 @@ local wibox = require("wibox")
 require("core.utils")
 
 require("visual.options")
-require("visual.themes." .. colorscheme_name .. ".widget_colors")
+require("visual.themes." .. THEME_COLORSCHEME .. ".colors")
 
 
 get_layout_indicator = function (s)
@@ -43,8 +43,8 @@ get_layout_indicator = function (s)
       widget = awful.widget.layoutbox
     },
     shape_border_width = 3,
-    shape_border_color = other_colors.dark,
-    bg = other_colors.dark,
+    shape_border_color = other_colors.border,
+    bg = other_colors.bg,
     shape = function(cr, w, h)
       return gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 5)
     end,

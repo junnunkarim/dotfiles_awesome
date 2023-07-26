@@ -3,14 +3,14 @@ local gears = require("gears")
 local wibox = require("wibox")
 
 require("visual.options")
-require("visual.themes." .. colorscheme_name .. ".widget_colors")
+require("visual.themes." .. THEME_COLORSCHEME .. ".colors")
 
 
 app_launcher = wibox.widget{
   {
     { -- widget
       font = "Iosevka Nerd Font Mono 20",
-      markup = '<span color="' .. other_colors.dark .. '"><b>󰣇</b></span>',
+      markup = '<span color="' .. app_launcher_colors.font .. '"><b>󰣇</b></span>',
       halign = "center",
       valign = "center",
       widget = wibox.widget.textbox
@@ -30,11 +30,11 @@ app_launcher = wibox.widget{
     },
     widget = wibox.container.margin
   },
-  bg = app_launcher_colors.light,
+  bg = app_launcher_colors.bg,
   shape = function(cr, w, h)
     return gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 20)
   end,
   shape_border_width = 3,
-  shape_border_color = app_launcher_colors.dark,
+  shape_border_color = app_launcher_colors.border,
   widget = wibox.container.background,
 }

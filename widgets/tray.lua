@@ -2,7 +2,7 @@ local gears = require("gears")
 local wibox = require("wibox")
 
 require("visual.options")
-require("visual.themes." .. colorscheme_name .. ".widget_colors")
+require("visual.themes." .. THEME_COLORSCHEME .. ".colors")
 
 
 --[[

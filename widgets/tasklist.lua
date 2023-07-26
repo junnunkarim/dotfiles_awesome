@@ -9,7 +9,7 @@ local available_bling, bling = pcall(require, "custom_modules.bling")
 -- }}}
 
 require("visual.options")
-require("visual.themes." .. colorscheme_name .. ".widget_colors")
+require("visual.themes." .. THEME_COLORSCHEME .. ".colors")
 
 
 --[[
@@ -69,10 +69,12 @@ get_tasklist = function (s)
       end,
 
       font = "Iosevka Nerd Font Mono 13",
-      bg_normal = tasklist_colors.light,
-      fg_normal = other_colors.gray,
-      bg_focus = tasklist_colors.dark,
-      fg_focus = other_colors.dark,
+      bg_normal = tasklist_colors.bg,
+      bg_focus = tasklist_colors.bg_focus,
+      bg_minimize = tasklist_colors.bg_minimize,
+      fg_normal = tasklist_colors.fg,
+      fg_focus = tasklist_colors.fg_focus,
+      fg_minimize = tasklist_colors.fg_minimize,
       --shape_border_color_focus = tasklist_colors.dark,
       --shape_border_width_focus = 2,
       --shape_border_color = tasklist_colors.light,
@@ -136,9 +138,9 @@ get_tasklist = function (s)
   }
 
   tasklist = wibox.widget {
-    {
-      {
-        {
+    { -- constraint
+      { -- background
+        { -- put it in a specific sector
           {
             widget = tasklist_core,
           },
@@ -148,9 +150,9 @@ get_tasklist = function (s)
         shape = function(cr, w, h)
           gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 20) -- t-left, t-right, b-right, b-left
         end,
-        bg = tasklist_colors.light,
+        bg = tasklist_colors.bg,
         shape_border_width = 3,
-        shape_border_color = tasklist_colors.dark,
+        shape_border_color = tasklist_colors.border,
         widget = wibox.container.background,
       },
       strategy = "min",

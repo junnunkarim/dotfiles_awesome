@@ -9,8 +9,7 @@ local available_bling, bling = pcall(require, "custom_modules.bling")
 -- }}}
 
 require("visual.options")
-require("visual.themes." .. colorscheme_name .. ".widget_colors")
-
+require("visual.themes." .. THEME_COLORSCHEME .. ".colors")
 
 --[[
 if available_bling then
@@ -53,11 +52,14 @@ get_taglist = function (s)
       end,
 
       font = "Iosevka Nerd Font Mono 30",
-      --bg_focus = taglist_colors.dark,
-      --fg_focus = "#282828",
-      --fg_occupied = "#ebdbb2",
+      bg_focus = taglist_colors.bg_focus,
+      bg_urgent = taglist_colors.bg_urgent,
+      fg_empty = taglist_colors.fg,
+      fg_focus = taglist_colors.fg_focus,
+      fg_occupied = taglist_colors.fg_occupied,
+      fg_urgent = taglist_colors.fg_urgent,
       --shape_border_width = 0,
-      shape_border_color_focus = taglist_colors.dark,
+      shape_border_color_focus = taglist_colors.border,
     },
     buttons = {
       awful.button(
@@ -171,6 +173,7 @@ get_taglist = function (s)
   taglist = wibox.widget {
     { -- margin
       taglist_core,
+
       margins = {
         left = 10,
         right = 10,
@@ -180,9 +183,9 @@ get_taglist = function (s)
     shape = function(cr, w, h)
       gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 20) -- t-left, t-right, b-right, b-left
     end,
-    bg = taglist_colors.light,
+    bg = taglist_colors.bg,
     shape_border_width = 3,
-    shape_border_color = taglist_colors.dark,
+    shape_border_color = taglist_colors.border,
     widget = wibox.container.background,
   }
 

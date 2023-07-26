@@ -5,7 +5,7 @@ local beautiful = require("beautiful")
 local battery_widget = require("custom_modules.upower")
 
 require("visual.options")
-require("visual.themes." .. colorscheme_name .. ".widget_colors")
+require("visual.themes." .. THEME_COLORSCHEME .. ".colors")
 
 
 battery_percent = battery_widget {
@@ -26,7 +26,7 @@ battery = wibox.widget (
         { -- margin
           { -- widget
             font = "Iosevka Nerd Font Mono 30",
-            markup = '<span color="' .. other_colors.dark .. '"><b></b></span>',
+            markup = '<span color="' .. battery_colors.fg .. '"><b></b></span>',
             halign = "center",
             valign = "center",
             widget = wibox.widget.textbox
@@ -40,14 +40,14 @@ battery = wibox.widget (
         shape = function(cr, w, h)
           return gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 20)
         end,
-        bg = battery_colors.dark,
+        bg = battery_colors.bg_icon,
         widget = wibox.container.background,
       },
       { -- margin
         {
           battery_percent,
 
-          fg = other_colors.dark,
+          fg = battery_colors.fg,
           widget = wibox.container.background,
         },
         margins = {
@@ -59,15 +59,14 @@ battery = wibox.widget (
       layout = wibox.layout.fixed.horizontal,
     },
     shape_border_width = 3,
-    shape_border_color = battery_colors.dark,
+    shape_border_color = battery_colors.border,
     shape = function(cr, w, h)
       return gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 20)
     end,
-    bg = battery_colors.light,
+    bg = battery_colors.bg,
     widget = wibox.container.background,
   }
 )
-
 
 
 -- When UPower updates the battery status, the widget is notified

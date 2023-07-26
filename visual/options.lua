@@ -1,5 +1,4 @@
-colorscheme_name = "gruvbox"
+THEME = "basic"
+COLORSCHEME = "rose_pine"
 
-font_size = 10
-widget_font_size = 15
-icon_font_size = 20
+THEME_COLORSCHEME = THEME .. ".colorschemes." .. COLORSCHEME

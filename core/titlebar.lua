@@ -2,7 +2,7 @@ local awful = require("awful")
 local wibox = require("wibox")
 
 require("visual.options")
-require("visual.themes." .. colorscheme_name .. ".widget_colors")
+require("visual.themes." .. THEME_COLORSCHEME .. ".colors")
 
 
 -- {{{ Titlebars
@@ -37,8 +37,8 @@ client.connect_signal(
       {
         size = 5,
         position = "left",
-        bg_normal = titlebar_colors.dark,
-        bg_focus = titlebar_colors.light,
+        bg_normal = titlebar_colors.border,
+        bg_focus = titlebar_colors.border_focus,
       }
     )
     left_titlebar : setup {

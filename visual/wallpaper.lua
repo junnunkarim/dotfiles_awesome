@@ -5,7 +5,7 @@ local awful = require("awful")
 local wibox = require("wibox")
 
 require("visual.options")
-require("visual.themes." .. colorscheme_name .. ".wallpaper")
+require("visual.themes." .. THEME_COLORSCHEME .. ".wallpaper")
 
 -- Bling library
 local available, bling = pcall(require, "custom_modules.bling")
@@ -28,14 +28,14 @@ else
       screen = s,
       widget = {
         {
-          image     = wall_directory .. "mist_forest_nord.jpg",
+          image = wall_directory .. "mist_forest_nord.jpg",
           --upscale   = true,
           --downscale = true,
-          widget    = wibox.widget.imagebox,
+          widget = wibox.widget.imagebox,
         },
         valign = "center",
         halign = "center",
-        tiled  = false,
+        tiled = false,
         widget = wibox.container.tile,
       }
     }

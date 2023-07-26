@@ -7,7 +7,7 @@ require("widgets")
 require("core.utils")
 
 require("visual.options")
-require("visual.themes." .. colorscheme_name .. ".widget_colors")
+require("visual.themes." .. THEME_COLORSCHEME .. ".colors")
 
 
 -- {{{ Wibar
@@ -137,12 +137,11 @@ screen.connect_signal(
         layout = wibox.layout.align.horizontal,
       },
       --screen = s,
-      --bg = TRANSPARENT,
-      bg = GRUVBOX.black,
+      bg = bar_colors.bg,
       position = "top",
       height = 35,
       border_width = 5,
-      border_color = GRUVBOX.black,
+      border_color = bar_colors.border,
       margins = {
         top = beautiful.useless_gap + beautiful.border_width,
         left = beautiful.useless_gap + beautiful.border_width,
