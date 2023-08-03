@@ -224,6 +224,13 @@ local global_keybindings = {
     {description = "Open application menu", group = "Launcher"}
   ),
   awful.key(
+    { SUPER,}, "t",
+    function()
+      awful.spawn(os.getenv("HOME") .. "/.config/awesome/scripts/theme_switcher")
+    end,
+    {description = "Open theme switcher", group = "Launcher"}
+  ),
+  awful.key(
     { SUPER,}, "n",
     function()
       awful.spawn("networkmanager_dmenu")
