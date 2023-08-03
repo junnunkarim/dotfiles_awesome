@@ -116,17 +116,29 @@ get_tasklist = function (s)
     widget_template = {
       {
         {
-          id = 'clienticon',
-          forced_height = 25,
-          forced_width = 25,
-          scaling_quality = "fast",
-          halign = "center",
-          valign = "center",
-          widget = awful.widget.clienticon,
+          {
+            --[[
+            id = 'clienticon',
+            forced_height = 25,
+            forced_width = 25,
+            scaling_quality = "fast",
+            halign = "center",
+            valign = "center",
+            widget = awful.widget.clienticon,
+            ]]--
+
+            id = "text_role",
+            halign = "center",
+            valign = "center",
+            widget = wibox.widget.textbox,
+          },
+          strategy = "max",
+          width = 100,
+          widget = wibox.container.constraint,
         },
         margins = {
-          left = 10,
-          right = 10,
+          left = 20,
+          right = 20,
           bottom = 2,
           top = 2,
         },

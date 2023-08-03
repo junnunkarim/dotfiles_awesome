@@ -219,7 +219,7 @@ local global_keybindings = {
   awful.key(
     { SUPER,}, "d",
     function()
-      awful.spawn(os.getenv("HOME") .. "/.bin/rofi_run")
+      awful.spawn(os.getenv("HOME") .. "/.config/awesome/scripts/rofi_run")
     end,
     {description = "Open application menu", group = "Launcher"}
   ),
@@ -233,21 +233,21 @@ local global_keybindings = {
   awful.key(
     { SUPER,}, "x",
     function()
-      awful.spawn(os.getenv("HOME") .. "/.bin/powermenu")
+      awful.spawn(os.getenv("HOME") .. "/.config/awesome/scripts/powermenu")
     end,
     {description = "Open power menu", group = "Launcher"}
   ),
   awful.key(
     { SUPER,}, "h",
     function()
-      awful.spawn(os.getenv("HOME") .. "/.bin/clipboard")
+      awful.spawn(os.getenv("HOME") .. "/.config/awesome/scripts/clipboard")
     end,
     {description = "Open clipboard manager", group = "Launcher"}
   ),
   awful.key(
     { SUPER,}, "r",
     function()
-      awful.spawn(os.getenv("HOME") .. "/.bin/rofi_calc")
+      awful.spawn(os.getenv("HOME") .. "/.config/awesome/scripts/rofi_calc")
     end,
     {description = "Open calculator ", group = "Launcher"}
   ),
