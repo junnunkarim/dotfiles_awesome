@@ -16,6 +16,7 @@ require("visual.themes." .. THEME_COLORSCHEME .. ".colors")
 local colors = GRUVBOX
 local theme = {
     font = "Iosevka Nerd Font Mono 10",
+    --font = "CozetteVector 10",
     taglist_font = "Iosevka Nerd Font Mono 20",
     tasklist_font = "Iosevka Nerd Font Mono 20",
 

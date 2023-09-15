@@ -213,6 +213,7 @@ ruled.client.connect_signal(
           "GParted",
           "Xfce4-power-manager-settings",
           "Lxappearance",
+          "Virt-manager",
         }
       },
       properties = {

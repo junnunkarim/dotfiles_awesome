@@ -22,7 +22,7 @@ date_core = wibox.widget{
     },
     bg = date_colors.bg_icon,
     shape = function(cr, w, h)
-      return gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 20)
+      return gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 0)
     end,
     widget = wibox.container.background,
   },
@@ -31,7 +31,7 @@ date_core = wibox.widget{
       font = "Iosevka Nerd Font Mono 15",
       widget = wibox.widget.textclock(
         '<span color="' .. date_colors.fg .. '"><b>%a|%d-%m-%Y</b></span>',
-        43200
+        21600
       )
     },
     margins = {
@@ -47,7 +47,7 @@ date = wibox.widget {
   date_core,
 
   shape = function(cr, w, h)
-    return gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 20)
+    return gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 10)
   end,
   shape_border_width = 3,
   shape_border_color = date_colors.border,

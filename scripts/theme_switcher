@@ -43,7 +43,8 @@ switch_alacritty_colorscheme()
 switch_nvim_colorscheme()
 {
   #sed "/switch_colorscheme(\"/s/(".*")/(\"$1\")/" -i ~/.config/nvim/lua/core/colorscheme.lua
-  sed "s/\(change_colorscheme(\)\"[^\"]*\"/\1\"$1\"/" -i ~/.config/nvim/lua/core/colorscheme.lua
+  #sed "s/\(change_colorscheme(\)\"[^\"]*\"/\1\"$1\"/" -i ~/.config/nvim/lua/core/colorscheme.lua
+  sed "s/\(color\ =\ \)\"[^\"]*\"/\1\"$1\"/" -i ~/.config/nvim/lua/core/colorscheme.lua
 }
 switch_btop_colorscheme()
 {

@@ -28,7 +28,7 @@ tray = wibox.widget{
 get_systray = function(s)
   tray = wibox.widget (
     {
-      visible = false,
+      visible = true,
       widget = wibox.widget.systray(),
     }
   )

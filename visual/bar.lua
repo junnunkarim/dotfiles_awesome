@@ -148,7 +148,7 @@ screen.connect_signal(
         right = beautiful.useless_gap + beautiful.border_width,
       },
       shape = function(cr, w, h)
-        gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 20) -- t-left, t-right, b-right, b-left
+        gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 10) -- t-left, t-right, b-right, b-left
       end,
     }
   end

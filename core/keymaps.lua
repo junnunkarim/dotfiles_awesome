@@ -233,7 +233,7 @@ local global_keybindings = {
   awful.key(
     { SUPER,}, "n",
     function()
-      awful.spawn("networkmanager_dmenu")
+      awful.spawn("networkmanager_dmenu --config ~/.config/awesome/external_configs/networkmanager-dmenu/config.ini")
     end,
     {description = "Open network menu", group = "Launcher"}
   ),
@@ -283,8 +283,10 @@ local global_keybindings = {
     {description = "Quit awesomewm", group = "Awesome"}
   ),
   awful.key(
-    { SUPER,}, "/",
-    hotkeys_popup.show_help,
+    { SUPER, }, "/",
+    function ()
+      hotkeys_popup.show_help()
+    end,
     {description = "Show keybindings", group = "Awesome"}
   ),
   awful.key(

@@ -7,6 +7,7 @@ require("visual.themes." .. THEME_COLORSCHEME .. ".colors")
 
 -- {{{ Titlebars
 -- Add a titlebar if titlebars_enabled is set to true in the rules.
+--[[
 client.connect_signal(
   "request::titlebars",
   function(c)
@@ -68,5 +69,6 @@ client.connect_signal(
     }
   end
 )
+]]--
 
 -- }}}

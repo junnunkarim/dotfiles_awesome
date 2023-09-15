@@ -23,7 +23,7 @@ time_core = wibox.widget{
     },
     bg = time_colors.bg_icon,
     shape = function(cr, w, h)
-      return gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 20)
+      return gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 0)
     end,
     widget = wibox.container.background,
   },
@@ -48,7 +48,7 @@ time = wibox.widget {
   time_core,
 
   shape = function(cr, w, h)
-    return gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 20)
+    return gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 10)
   end,
   shape_border_width = 3,
   shape_border_color = time_colors.border,

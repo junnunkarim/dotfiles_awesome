@@ -63,125 +63,125 @@ get_taglist = function (s)
     },
     buttons = {
       awful.button(
-        { }, 1,
-        function(t)
-          t:view_only()
-        end
+      { }, 1,
+      function(t)
+        t:view_only()
+      end
       ),
       awful.button(
-        { SUPER }, 1,
-        function(t)
-          if client.focus then
-            client.focus:move_to_tag(t)
-          end
+      { SUPER }, 1,
+      function(t)
+        if client.focus then
+          client.focus:move_to_tag(t)
         end
+      end
       ),
       awful.button(
-        { }, 3,
-        awful.tag.viewtoggle
+      { }, 3,
+      awful.tag.viewtoggle
       ),
       awful.button(
-        { SUPER }, 3,
-        function(t)
-          if client.focus then
-            client.focus:toggle_tag(t)
-          end
+      { SUPER }, 3,
+      function(t)
+        if client.focus then
+          client.focus:toggle_tag(t)
         end
+      end
       ),
       awful.button(
-        { }, 4,
-        function(t)
-          awful.tag.viewprev(t.screen)
-        end
+      { }, 4,
+      function(t)
+        awful.tag.viewprev(t.screen)
+      end
       ),
       awful.button(
-        { }, 5,
-        function(t)
-          awful.tag.viewnext(t.screen)
-        end
+      { }, 5,
+      function(t)
+        awful.tag.viewnext(t.screen)
+      end
       ),
     },
     widget_template = {
       { -- background
-        { -- margin
-          id = "text_role",
-          align = "center",
-          valign = "center",
-          widget = wibox.widget.textbox,
-        },
-        margins = {
-          left = 10,
-          right = 10,
-        },
-        widget = wibox.container.margin,
-      },
-      id = "background_role",
-      widget = wibox.container.background,
-
-      -- Add support for hover colors and an index label
-      create_callback = function(self, c3, text, objects) --luacheck: no unused args
-        --self:get_children_by_id('index_role')[1].markup = '<b> '..index..' </b>'
-        --self:get_children_by_id('text_role')[1].markup = '<b> '..text..' </b>'
-        self:connect_signal(
-          'mouse::enter',
-          function()
-            --[[
-            if available_bling then
-              -- BLING: Only show widget when there are clients in the tag
-              if #c3:clients() > 0 then
-                -- BLING: Update the widget with the new tag
-                awesome.emit_signal("bling::tag_preview::update", c3)
-                -- BLING: Show the widget
-                awesome.emit_signal("bling::tag_preview::visibility", s, true)
-              end
-            end
-            ]]--
-
-            if self.bg ~= taglist_colors.hover then
-              self.backup = self.bg
-              self.backup_shape_border_color = self.shape_border_color
-              self.has_backup = true
-            end
-
-            self.bg = taglist_colors.hover
-            self.shape_border_color = taglist_colors.hover
-          end
-        )
-        self:connect_signal(
-          'mouse::leave',
-          function()
-            -- BLING: Turn the widget off
-            --awesome.emit_signal("bling::tag_preview::visibility", s, false)
-
-            if self.has_backup then
-              self.bg = self.backup
-              self.shape_border_color = self.backup_shape_border_color
-            end
-          end
-        )
-      end,
-
-      --[[
-      update_callback = function(self, c3, text, objects) --luacheck: no unused args
-        --self:get_children_by_id('index_role')[1].markup = '<b> '..index..' </b>'
-        self:get_children_by_id('text_role')[1].markup = '<b> '..text..' </b>'
-      end,
-      ]]--
+      { -- margin
+      id = "text_role",
+      align = "center",
+      valign = "center",
+      widget = wibox.widget.textbox,
     },
+    margins = {
+      left = 10,
+      right = 10,
+    },
+    widget = wibox.container.margin,
+  },
+  id = "background_role",
+  widget = wibox.container.background,
+
+  -- Add support for hover colors and an index label
+  create_callback = function(self, c3, text, objects) --luacheck: no unused args
+    --self:get_children_by_id('index_role')[1].markup = '<b> '..index..' </b>'
+    --self:get_children_by_id('text_role')[1].markup = '<b> '..text..' </b>'
+    self:connect_signal(
+    'mouse::enter',
+    function()
+      --[[
+      if available_bling then
+        -- BLING: Only show widget when there are clients in the tag
+        if #c3:clients() > 0 then
+          -- BLING: Update the widget with the new tag
+          awesome.emit_signal("bling::tag_preview::update", c3)
+          -- BLING: Show the widget
+          awesome.emit_signal("bling::tag_preview::visibility", s, true)
+        end
+      end
+      ]]--
+
+      if self.bg ~= taglist_colors.hover then
+        self.backup = self.bg
+        self.backup_shape_border_color = self.shape_border_color
+        self.has_backup = true
+      end
+
+      self.bg = taglist_colors.hover
+      self.shape_border_color = taglist_colors.hover
+    end
+    )
+    self:connect_signal(
+    'mouse::leave',
+    function()
+      -- BLING: Turn the widget off
+      --awesome.emit_signal("bling::tag_preview::visibility", s, false)
+
+      if self.has_backup then
+        self.bg = self.backup
+        self.shape_border_color = self.backup_shape_border_color
+      end
+    end
+    )
+  end,
+
+  --[[
+  update_callback = function(self, c3, text, objects) --luacheck: no unused args
+    --self:get_children_by_id('index_role')[1].markup = '<b> '..index..' </b>'
+    self:get_children_by_id('text_role')[1].markup = '<b> '..text..' </b>'
+  end,
+  ]]--
+},
   }
 
   taglist = wibox.widget {
     { -- margin
-      taglist_core,
+    taglist_core,
 
-      margins = {
-        left = 10,
-        right = 10,
-      },
-      widget = wibox.container.margin
+    margins = {
+      left = 10,
+      right = 10,
     },
-    shape = function(cr, w, h)
-      gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 20) -- t-left, t-right, b-right, b-left
+    widget = wibox.container.margin
+  },
+  shape = function(cr, w, h)
+    gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 20) -- t-left, t-right, b-right, b-left
     end,
     bg = taglist_colors.bg,
     shape_border_width = 3,

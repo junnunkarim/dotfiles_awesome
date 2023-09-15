@@ -32,7 +32,7 @@ app_launcher = wibox.widget{
   },
   bg = app_launcher_colors.bg,
   shape = function(cr, w, h)
-    return gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 20)
+    return gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 10)
   end,
   shape_border_width = 3,
   shape_border_color = app_launcher_colors.border,

@@ -65,7 +65,7 @@ get_tasklist = function (s)
     filter = awful.widget.tasklist.filter.currenttags,
     style = {
       shape = function(cr, w, h)
-        gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 20) -- t-left, t-right, b-right, b-left
+        gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 10) -- t-left, t-right, b-right, b-left
       end,
 
       font = "Iosevka Nerd Font Mono 13",
@@ -160,7 +160,7 @@ get_tasklist = function (s)
           layout = wibox.container.place
         },
         shape = function(cr, w, h)
-          gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 20) -- t-left, t-right, b-right, b-left
+          gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 10) -- t-left, t-right, b-right, b-left
         end,
         bg = tasklist_colors.bg,
         shape_border_width = 3,

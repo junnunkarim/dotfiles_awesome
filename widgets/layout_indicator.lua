@@ -46,7 +46,7 @@ get_layout_indicator = function (s)
     shape_border_color = other_colors.border,
     bg = other_colors.bg,
     shape = function(cr, w, h)
-      return gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 5)
+      return gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 10)
     end,
     widget = wibox.container.background,
   }
