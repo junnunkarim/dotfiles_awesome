@@ -183,6 +183,21 @@ local global_keybindings = {
       group="Applications",
     }
   ),
+  awful.key(
+    {
+      modifiers = { SUPER, "Shift" },
+      key = "d",
+      on_press =
+        function()
+          if scratch_zeal ~= nil then
+            scratch_zeal:toggle()
+          end
+        end,
+      description="Launch Zeal Documentation Browser",
+      group="Applications",
+    }
+  ),
+
 
   awful.key(
     {

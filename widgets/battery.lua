@@ -61,7 +61,7 @@ battery = wibox.widget (
     shape_border_width = 3,
     shape_border_color = battery_colors.border,
     shape = function(cr, w, h)
-      return gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 10)
+      return gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 100)
     end,
     bg = battery_colors.bg,
     widget = wibox.container.background,

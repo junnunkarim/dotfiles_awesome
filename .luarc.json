@@ -1,0 +1,16 @@
+{
+    "diagnostics.globals": [
+        "vim",
+        "wallpaper_names",
+        "tray_colors",
+        "date_colors",
+        "time_colors",
+        "battery_colors",
+        "app_launcher_colors",
+        "other_colors",
+        "bar_colors",
+        "titlebar_colors",
+        "tasklist_colors",
+        "taglist_colors"
+    ]
+}

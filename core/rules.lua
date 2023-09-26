@@ -81,21 +81,38 @@ ruled.client.connect_signal(
       },
     }
 
-    -- app rules
+    -- app rules | tag rules
     ruled.client.append_rule
     {
       rule_any = {
         class = {
           --"org.wezfurlong.wezterm",
           "Alacritty",
-          "Emacs",
-          "Geany",
-          "jetbrains-idea-ce",
           "st-256color",
         }
       },
       properties = {
         tag = function(c) return c.screen.tags[1] end,
+        switch_to_tags = true,
+        maximized = false,
+        placement = awful.placement.centered,
+      }
+    }
+
+    ruled.client.append_rule
+    {
+      rule_any = {
+        class = {
+          "code-oss",
+          "Emacs",
+          "Geany",
+          "jetbrains-idea-ce",
+          "jetbrains-pycharm",
+          "jetbrains-dataspell",
+        }
+      },
+      properties = {
+        tag = function(c) return c.screen.tags[2] end,
         switch_to_tags = true,
         maximized = false,
         placement = awful.placement.centered,
@@ -112,7 +129,7 @@ ruled.client.connect_signal(
         }
       },
       properties = {
-        tag = function(c) return c.screen.tags[2] end,
+        tag = function(c) return c.screen.tags[3] end,
         switch_to_tags = true,
         maximized = false,
         placement = awful.placement.centered,
@@ -130,7 +147,7 @@ ruled.client.connect_signal(
         }
       },
       properties = {
-        tag = function(c) return c.screen.tags[3] end,
+        tag = function(c) return c.screen.tags[4] end,
         switch_to_tags = true,
         maximized = false,
         placement = awful.placement.centered,
@@ -148,7 +165,7 @@ ruled.client.connect_signal(
         }
       },
       properties = {
-        tag = function(c) return c.screen.tags[4] end,
+        tag = function(c) return c.screen.tags[5] end,
         switch_to_tags = true,
         maximized = false,
         placement = awful.placement.centered,
@@ -166,7 +183,7 @@ ruled.client.connect_signal(
         }
       },
       properties = {
-        tag = function(c) return c.screen.tags[5] end,
+        tag = function(c) return c.screen.tags[6] end,
         switch_to_tags = true,
         maximized = false,
         placement = awful.placement.centered,
@@ -182,7 +199,7 @@ ruled.client.connect_signal(
         }
       },
       properties = {
-        tag = function(c) return c.screen.tags[6] end,
+        tag = function(c) return c.screen.tags[7] end,
         switch_to_tags = true,
         maximized = false,
         placement = awful.placement.centered,
@@ -199,7 +216,7 @@ ruled.client.connect_signal(
         }
       },
       properties = {
-        tag = function(c) return c.screen.tags[7] end,
+        tag = function(c) return c.screen.tags[8] end,
         switch_to_tags = true,
         maximized = false,
         placement = awful.placement.centered,
@@ -217,7 +234,7 @@ ruled.client.connect_signal(
         }
       },
       properties = {
-        tag = function(c) return c.screen.tags[8] end,
+        tag = function(c) return c.screen.tags[9] end,
         switch_to_tags = true,
         maximized = false,
         placement = awful.placement.centered,

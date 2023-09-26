@@ -1,4 +1,4 @@
 THEME = "basic"
-COLORSCHEME = "rose_pine"
+COLORSCHEME = "everforest"
 
 THEME_COLORSCHEME = THEME .. ".colorschemes." .. COLORSCHEME

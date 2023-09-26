@@ -4,4 +4,4 @@ rofi -show calc \
 	-modi calc \
 	-no-show-match \
 	-no-sort \
-	-theme $HOME/.config/awesome/external_configs/rofi/script_menu_1.rasi
+	-theme $HOME/.config/awesome/external_configs/rofi/calculator.rasi

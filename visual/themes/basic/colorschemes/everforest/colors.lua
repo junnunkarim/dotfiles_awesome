@@ -1,6 +1,6 @@
 require("visual.colorschemes")
 
-local colors = GRUVBOX
+local colors = EVERFOREST
 
 other_colors = {
   light = colors.white,
@@ -16,63 +16,63 @@ other_colors = {
 ---{{{ Widget Colors
 app_launcher_colors = {
   font = other_colors.dark,
-  bg = colors.red2,
+  bg = colors.red1,
   border = colors.red1,
 }
 
 battery_colors = {
   fg = colors.black,
-  bg = colors.green2,
-  bg_icon = colors.green1,
-  border = colors.green1,
+  bg = colors.blue1,
+  bg_icon = colors.blue2,
+  border = colors.blue2,
 }
 
 time_colors = {
   fg = other_colors.dark,
-  bg = colors.aqua2,
-  bg_icon = colors.aqua1,
-  border = colors.aqua1,
+  bg = colors.aqua1,
+  bg_icon = colors.aqua2,
+  border = colors.aqua2,
 }
 
 date_colors = {
   fg = other_colors.dark,
-  bg = colors.purple2,
-  bg_icon = colors.purple1,
-  border = colors.purple1,
+  bg = colors.yellow1,
+  bg_icon = colors.yellow2,
+  border = colors.yellow2,
 }
 
 tray_colors = {
   fg = other_colors.dark,
-  bg = colors.red2,
-  border = colors.red1,
+  bg = colors.red1,
+  border = colors.red2,
 }
 ---}}}
 
 taglist_colors = {
-  fg = colors.white,
-  bg = colors.blue2,
-  bg_focus = colors.blue1,
+  fg = colors.gray1,
+  bg = colors.green1,
+  bg_focus = colors.black,
   bg_urgent = colors.black,
-  fg_focus = colors.black,
+  fg_focus = colors.green1,
   fg_occupied = colors.black,
   fg_urgent = colors.red1,
-  border = colors.blue1,
-  hover = colors.gray2,
+  border = colors.green1,
+  hover = colors.aqua1,
 }
 
 tasklist_colors = {
-  fg = colors.gray1,
-  fg_focus = colors.white,
-  fg_minimize = colors.red2,
+  fg = other_colors.gray,
+  fg_focus = colors.black0,
+  fg_minimize = colors.red1,
   bg = colors.black,
-  bg_focus = colors.orange1,
+  bg_focus = colors.gray1,
   bg_minimize = colors.black,
   border = colors.black,
 }
 
 titlebar_colors = {
   border = colors.black,
-  border_focus = colors.blue2,
+  border_focus = colors.green1,
 }
 
 bar_colors = {
