@@ -48,7 +48,7 @@ get_taglist = function (s)
     --end,
     style = {
       shape = function(cr, w, h)
-        gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 20) -- t-left, t-right, b-right, b-left
+        gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 30) -- t-left, t-right, b-right, b-left
       end,
 
       font = "Iosevka Nerd Font Mono 30",
@@ -175,13 +175,15 @@ get_taglist = function (s)
     taglist_core,
 
     margins = {
-      left = 10,
-      right = 10,
+      left = 20,
+      right = 20,
+      top = 4,
+      bottom = 4,
     },
     widget = wibox.container.margin
   },
   shape = function(cr, w, h)
-    gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 20) -- t-left, t-right, b-right, b-left
+      gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 20) -- t-left, t-right, b-right, b-left
     end,
     bg = taglist_colors.bg,
     shape_border_width = 3,

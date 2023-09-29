@@ -3,25 +3,20 @@ require("visual.colorschemes")
 local colors = ROSE_PINE
 
 other_colors = {
-  light = colors.white,
-  gray = colors.gray1,
-  dark = colors.black3,
-  too_dark = colors.black3,
-
-  font = colors.white,
-  bg = colors.black3,
   border = colors.black3,
 }
 
 ---{{{ Widget Colors
 app_launcher_colors = {
-  font = colors.black3,
+  fg = colors.black3,
+  fg_icon = colors.black3,
   bg = colors.red1,
   border = colors.red2,
 }
 
 battery_colors = {
   fg = colors.black3,
+  fg_icon = colors.black3,
   bg = colors.orange1,
   bg_icon = colors.orange2,
   border = colors.orange2,
@@ -29,6 +24,7 @@ battery_colors = {
 
 time_colors = {
   fg = colors.black3,
+  fg_icon = colors.cyan1,
   bg = colors.cyan1,
   bg_icon = colors.cyan2,
   border = colors.cyan2,
@@ -36,6 +32,7 @@ time_colors = {
 
 date_colors = {
   fg = colors.black3,
+  fg_icon = colors.black3,
   bg = colors.purple1,
   bg_icon = colors.purple2,
   border = colors.purple2,
@@ -43,6 +40,7 @@ date_colors = {
 
 tray_colors = {
   fg = colors.black3,
+  fg_icon = colors.black3,
   bg = colors.black3,
   border = colors.black3,
 }

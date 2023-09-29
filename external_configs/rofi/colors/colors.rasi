@@ -1,30 +1,30 @@
 * {
-  white: #d3c6aa;
-  black: #2d353b;
-  black0: #232a2e;
+  white: #ebdbb2;
+  black: #282828;
+  black0: #1d2021;
   gray1: #928374;
-  gray2: #859289;
-  red1: #e67e80;
+  gray2: #a89984;
+  red1: #cc241d;
   red2: #fb4934;
-  green1: #a7c080;
+  green1: #98971a;
   green2: #b8bb26;
-  yellow1: #dbbc7f;
+  yellow1: #d79921;
   yellow2: #fabd2f;
-  blue1: #7fbbb3;
-  blue2: #3a94c5;
+  blue1: #458488;
+  blue2: #83a598;
   purple1: #b16286;
   purple2: #d3869b;
-  aqua1: #83c092;
+  aqua1: #689d6a;
   aqua2: #8ec07c;
-  orange1: #e69875;
+  orange1: #d65d0e;
   orange2: #fe8019;
 
-  background: var(black0);
-  background-1: var(black);
+  background: var(black);
+  background-1: var(black0);
   foreground: var(white);
   foreground-1: var(gray2);
-  selected: var(green1);
+  selected: var(blue2);
   selected-1: var(blue1);
-  active: var(orange1);
+  active: var(aqua2);
   urgent: var(red1);
 }

@@ -467,14 +467,16 @@ local global_keybindings = {
   awful.key(
     { SUPER, ALT }, "v",
     function()
-      awful.spawn("alacritty -e nvim")
+      --awful.spawn("alacritty -e nvim")
+      awful.spawn("kitty nvim")
     end,
     {description="Launch Neovim", group="Applications"}
   ),
   awful.key(
     { SUPER, ALT }, "n",
     function()
-      awful.spawn("alacritty -e bash ~/.bin/nnn_run -T v")
+      --awful.spawn("alacritty -e bash ~/.bin/nnn_run -T v")
+      awful.spawn("kitty ~/.bin/nnn_run -T v")
     end,
     {description="Launch nnn", group="Applications"}
   ),

@@ -27,7 +27,7 @@ screen.connect_signal(
     awful.tag.add("", {
       index = 1,
       screen = s,
-      layout = awful.layout.suit.max,
+      layout = awful.layout.suit.tile,
       selected = true,
     })
     awful.tag.add("󱃖", {
@@ -133,21 +133,22 @@ screen.connect_signal(
           halign = "right",
           layout = wibox.container.place,
         },
+        expand = "none",
         layout = wibox.layout.align.horizontal,
       },
       --screen = s,
       bg = bar_colors.bg,
       position = "top",
       height = 35,
-      border_width = 5,
+      border_width = 6,
       border_color = bar_colors.border,
       margins = {
         top = beautiful.useless_gap + beautiful.border_width,
-        left = beautiful.useless_gap + beautiful.border_width,
-        right = beautiful.useless_gap + beautiful.border_width,
+        left = beautiful.useless_gap + (beautiful.border_width * 2),
+        right = beautiful.useless_gap + (beautiful.border_width * 2),
       },
       shape = function(cr, w, h)
-        gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 10) -- t-left, t-right, b-right, b-left
+        gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 15) -- t-left, t-right, b-right, b-left
       end,
     }
   end

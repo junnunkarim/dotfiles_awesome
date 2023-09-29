@@ -1,4 +1,4 @@
 THEME = "basic"
-COLORSCHEME = "everforest"
+COLORSCHEME = "gruvbox"
 
 THEME_COLORSCHEME = THEME .. ".colorschemes." .. COLORSCHEME

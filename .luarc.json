@@ -11,6 +11,9 @@
         "bar_colors",
         "titlebar_colors",
         "tasklist_colors",
-        "taglist_colors"
+        "taglist_colors",
+        "terminal",
+        "editor",
+        "editor_cmd"
     ]
 }

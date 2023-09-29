@@ -10,7 +10,7 @@ time_core = wibox.widget{
     { -- margin
       { -- widget
         font = "Iosevka Nerd Font Mono 30",
-        markup = '<span color="' .. time_colors.fg .. '"><b></b></span>',
+        markup = '<span color="' .. time_colors.fg_icon .. '"><b></b></span>',
         halign = "center",
         valign = "center",
         widget = wibox.widget.textbox

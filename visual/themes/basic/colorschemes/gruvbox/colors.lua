@@ -15,13 +15,15 @@ other_colors = {
 
 ---{{{ Widget Colors
 app_launcher_colors = {
-  font = other_colors.dark,
+  fg = other_colors.dark,
+  fg_icon = colors.black,
   bg = colors.red2,
   border = colors.red1,
 }
 
 battery_colors = {
   fg = colors.black,
+  fg_icon = colors.black,
   bg = colors.green2,
   bg_icon = colors.green1,
   border = colors.green1,
@@ -29,6 +31,7 @@ battery_colors = {
 
 time_colors = {
   fg = other_colors.dark,
+  fg_icon = colors.black,
   bg = colors.aqua2,
   bg_icon = colors.aqua1,
   border = colors.aqua1,
@@ -36,6 +39,7 @@ time_colors = {
 
 date_colors = {
   fg = other_colors.dark,
+  fg_icon = colors.black,
   bg = colors.purple2,
   bg_icon = colors.purple1,
   border = colors.purple1,
@@ -43,6 +47,7 @@ date_colors = {
 
 tray_colors = {
   fg = other_colors.dark,
+  fg_icon = colors.black,
   bg = colors.red2,
   border = colors.red1,
 }
@@ -61,13 +66,13 @@ taglist_colors = {
 }
 
 tasklist_colors = {
-  fg = colors.gray1,
+  fg = colors.black,
   fg_focus = colors.white,
-  fg_minimize = colors.red2,
-  bg = colors.black,
+  fg_minimize = colors.gray1,
+  bg = colors.orange2,
   bg_focus = colors.orange1,
-  bg_minimize = colors.black,
-  border = colors.black,
+  bg_minimize = colors.orange2,
+  border = colors.orange2,
 }
 
 titlebar_colors = {

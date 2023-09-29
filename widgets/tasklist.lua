@@ -65,7 +65,7 @@ get_tasklist = function (s)
     filter = awful.widget.tasklist.filter.currenttags,
     style = {
       shape = function(cr, w, h)
-        gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 30) -- t-left, t-right, b-right, b-left
+        gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 20) -- t-left, t-right, b-right, b-left
       end,
 
       font = "Iosevka Nerd Font Mono 13",
@@ -133,7 +133,7 @@ get_tasklist = function (s)
             widget = wibox.widget.textbox,
           },
           strategy = "max",
-          width = 100,
+          width = 200,
           widget = wibox.container.constraint,
         },
         margins = {
@@ -150,30 +150,27 @@ get_tasklist = function (s)
   }
 
   tasklist = wibox.widget {
-    { -- constraint
       { -- background
         { -- put it in a specific sector
           {
             widget = tasklist_core,
           },
-          halign = "center",
-          layout = wibox.container.place
+          margins = {
+            left = 5,
+            right = 5,
+          },
+          layout = wibox.container.margin
         },
         shape = function(cr, w, h)
-          gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 10) -- t-left, t-right, b-right, b-left
+          gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 20) -- t-left, t-right, b-right, b-left
         end,
         bg = tasklist_colors.bg,
         shape_border_width = 3,
         shape_border_color = tasklist_colors.border,
         widget = wibox.container.background,
       },
-      strategy = "min",
-      width = 200,
-      --forced_height = 30,
-      widget = wibox.container.constraint,
-    },
     strategy = "max",
-    width = 500,
+    width = 600,
     widget = wibox.container.constraint,
   }
 

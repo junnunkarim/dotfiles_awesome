@@ -3,46 +3,44 @@ require("visual.colorschemes")
 local colors = EVERBLUSH
 
 other_colors = {
-  light = colors.white,
-  gray = colors.gray,
-  dark = colors.black,
-  too_dark = colors.black0,
-
-  font = colors.white,
-  bg = colors.black,
   border = colors.black,
 }
 
 ---{{{ Widget Colors
 app_launcher_colors = {
-  font = other_colors.dark,
+  fg = colors.black,
+  fg_icon = colors.black,
   bg = colors.red1,
-  border = colors.red2,
+  border = colors.black,
 }
 
 battery_colors = {
-  fg = other_colors.dark,
+  fg = colors.black,
+  fg_icon = colors.blue1,
   bg = colors.blue1,
-  bg_icon = colors.blue2,
-  border = colors.blue2,
+  bg_icon = colors.black,
+  border = colors.black,
 }
 
 time_colors = {
-  fg = other_colors.dark,
+  fg = colors.black,
+  fg_icon = colors.cyan1,
   bg = colors.cyan1,
-  bg_icon = colors.cyan2,
-  border = colors.cyan2,
+  bg_icon = colors.black,
+  border = colors.black,
 }
 
 date_colors = {
-  fg = other_colors.dark,
+  fg = colors.black,
+  fg_icon = colors.purple1,
   bg = colors.purple1,
-  bg_icon = colors.purple2,
-  border = colors.purple2,
+  bg_icon = colors.black,
+  border = colors.black,
 }
 
 tray_colors = {
-  fg = other_colors.dark,
+  fg = colors.black,
+  fg_icon = colors.black,
   bg = colors.black,
   border = colors.black,
 }
@@ -52,22 +50,22 @@ taglist_colors = {
   bg = colors.green1,
   bg_focus = colors.black,
   bg_urgent = colors.black,
-  fg = colors.white,
+  fg = colors.gray,
   fg_focus = colors.green1,
   fg_occupied = colors.black,
   fg_urgent = colors.red1,
-  border = colors.green2,
+  border = colors.green1,
   hover = colors.gray,
 }
 
 tasklist_colors = {
-  fg = colors.black,
+  fg = colors.gray,
   fg_focus = colors.black,
-  fg_minimize = colors.black,
-  bg = colors.yellow1,
-  bg_focus = colors.yellow2,
+  fg_minimize = colors.red1,
+  bg = colors.black,
+  bg_focus = colors.yellow1,
   bg_minimize = colors.black,
-  border = colors.yellow2,
+  border = colors.black,
 }
 
 titlebar_colors = {
@@ -77,5 +75,5 @@ titlebar_colors = {
 
 bar_colors = {
   bg = colors.black,
-  border = colors.black0,
+  border = colors.black,
 }

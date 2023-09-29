@@ -42,9 +42,9 @@ ruled.client.connect_signal(
           "veromix",
           "xtightvncviewer",
           "Gpick",
-          --"Alacritty",
+          "Alacritty",
           --"wezterm",
-          "kitty",
+          --"kitty",
           "Lxappearance",
           "Xfce-polkit",
           "Protonvpn",
@@ -87,7 +87,8 @@ ruled.client.connect_signal(
       rule_any = {
         class = {
           --"org.wezfurlong.wezterm",
-          "Alacritty",
+          --"Alacritty",
+          "kitty",
           "st-256color",
         }
       },

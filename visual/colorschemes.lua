@@ -4,19 +4,13 @@ EVERBLUSH = {
   white = "#dadada",
   black = "#141b1e",
   black0 = "#232a2d",
-  gray = "#a3a9a8",
+  gray = "#8c8c8c",
   cyan1 = "#6cbfbf",
-  cyan2 = "#3e8e8e",
   green1 = "#8ccf7e",
-  green2 = "#58ba45",
   yellow1 = "#e5c76b",
-  yellow2 = "#d9ac26",
   blue1 = "#67b0e8",
-  blue2 = "#218cde",
   purple1 = "#c47fd5",
-  purple2 = "#c47fd5",
   red1 = "#e57474",
-  red2 = "#d62929",
 }
 
 EVERFOREST = {

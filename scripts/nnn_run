@@ -20,4 +20,5 @@ stty start undef
 stty stop undef
 
 # Start nnn with your preferred options
-alacritty -e nnn "$@" -T -v
+# alacritty -e nnn "$@" -T -v
+kitty nnn "$@" -T -v

@@ -93,7 +93,7 @@ case $select in
     switch_theme everblush
 		switch_gtk_theme everblush
     switch_alacritty_colorscheme everblush
-    switch_nvim_colorscheme base16-everforest
+    switch_nvim_colorscheme everblush
 		;;
 	$colorscheme4)
 		switch_theme everforest

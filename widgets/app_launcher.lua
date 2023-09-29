@@ -10,7 +10,7 @@ app_launcher = wibox.widget{
   {
     { -- widget
       font = "Iosevka Nerd Font Mono 20",
-      markup = '<span color="' .. app_launcher_colors.font .. '"><b>󰣇</b></span>',
+      markup = '<span color="' .. app_launcher_colors.fg_icon .. '"><b>󰣇</b></span>',
       halign = "center",
       valign = "center",
       widget = wibox.widget.textbox
