@@ -5,7 +5,7 @@ local wibox = require("wibox")
 require("core.utils")
 
 -- Bling library
-local available_bling, bling = pcall(require, "custom_modules.bling")
+--local available_bling, bling = pcall(require, "custom_modules.bling")
 -- }}}
 
 require("visual.options")

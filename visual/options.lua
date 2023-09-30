@@ -1,4 +1,4 @@
 THEME = "basic"
-COLORSCHEME = "gruvbox"
+COLORSCHEME = "rose_pine"
 
 THEME_COLORSCHEME = THEME .. ".colorschemes." .. COLORSCHEME

@@ -45,6 +45,28 @@ local global_keybindings = {
       group = "client"
     }
   ),
+  awful.key (
+    {
+      modifiers = { SUPER, },
+      key = "Right",
+      on_press = function()
+        awful.tag.incmwfact(0.05)
+      end,
+      description = "Increase master width factor",
+      group = "client"
+    }
+  ),
+  awful.key (
+    {
+      modifiers = { SUPER, },
+      key = "Left",
+      on_press = function()
+        awful.tag.incmwfact(-0.05)
+      end,
+      description = "Decrease master width factor",
+      group = "client"
+    }
+  ),
 
   -- Layout related keybindings
   awful.key(
@@ -81,14 +103,13 @@ local global_keybindings = {
       keygroup = "numrow",
       description = "Select multiple tags",
       group = "tag",
-      on_press =
-        function (index)
-          local screen = awful.screen.focused()
-          local tag = screen.tags[index]
-          if tag then
-            awful.tag.viewtoggle(tag)
-          end
-        end,
+      on_press = function (index)
+        local screen = awful.screen.focused()
+        local tag = screen.tags[index]
+        if tag then
+          awful.tag.viewtoggle(tag)
+        end
+      end,
     }
   ),
   awful.key (
@@ -97,15 +118,14 @@ local global_keybindings = {
       keygroup = "numrow",
       description = "move focused client to tag",
       group = "tag",
-      on_press =
-        function (index)
-          if client.focus then
-            local tag = client.focus.screen.tags[index]
-            if tag then
-              client.focus:move_to_tag(tag)
-            end
+      on_press = function (index)
+        if client.focus then
+          local tag = client.focus.screen.tags[index]
+          if tag then
+            client.focus:move_to_tag(tag)
           end
-        end,
+        end
+      end,
     }
   ),
   awful.key (
@@ -114,15 +134,14 @@ local global_keybindings = {
       keygroup = "numrow",
       description = "Pin focused client on specific tags",
       group = "tag",
-      on_press =
-        function (index)
-          if client.focus then
-            local tag = client.focus.screen.tags[index]
-            if tag then
-              client.focus:toggle_tag(tag)
-            end
+      on_press = function (index)
+        if client.focus then
+          local tag = client.focus.screen.tags[index]
+          if tag then
+            client.focus:toggle_tag(tag)
           end
-        end,
+        end
+      end,
     }
   ),
 
@@ -136,7 +155,7 @@ local global_keybindings = {
           awful.spawn(terminal)
         end,
       description = "Open a terminal",
-      group = "Applications",
+      group = "applications",
     }
   ),
   awful.key(
@@ -152,7 +171,7 @@ local global_keybindings = {
           end
         end,
       description = "Toggle drop-down terminal",
-      group = "Applications",
+      group = "applications",
     }
   ),
   awful.key(
@@ -166,7 +185,7 @@ local global_keybindings = {
           end
         end,
       description="Launch Btop",
-      group="Applications",
+      group="applications",
     }
   ),
   awful.key(
@@ -180,7 +199,7 @@ local global_keybindings = {
           end
         end,
       description="Launch KeePassXC",
-      group="Applications",
+      group="applications",
     }
   ),
   awful.key(
@@ -194,7 +213,7 @@ local global_keybindings = {
           end
         end,
       description="Launch Zeal Documentation Browser",
-      group="Applications",
+      group="applications",
     }
   ),
 
@@ -283,26 +302,24 @@ local global_keybindings = {
   awful.key(
     { SUPER, "Shift" }, "r",
     awesome.restart,
-    {description = "Reload awesomewm", group = "Awesome"}
+    {description = "Reload awesomewm", group = "awesome"}
   ),
   awful.key(
     { SUPER, }, "w",
     function()
       mymainmenu:toggle()
     end,
-    {description = "Show main-menu", group = "Awesome"}
+    {description = "Show main-menu", group = "awesome"}
   ),
   awful.key(
     { SUPER, "Shift" }, "q",
     awesome.quit,
-    {description = "Quit awesomewm", group = "Awesome"}
+    {description = "Quit awesomewm", group = "awesome"}
   ),
   awful.key(
-    { SUPER, }, "/",
-    function ()
-      hotkeys_popup.show_help()
-    end,
-    {description = "Show keybindings", group = "Awesome"}
+    { SUPER, }, "s",
+      hotkeys_popup.show_help,
+    {description = "Show keybindings", group = "awesome"}
   ),
   awful.key(
     { SUPER, "Shift" }, "l",
@@ -314,7 +331,7 @@ local global_keybindings = {
         history_path = awful.util.get_cache_dir() .. "/history_eval"
       }
     end,
-    {description = "Lua execute prompt", group = "Awesome"}
+    {description = "Lua execute prompt", group = "awesome"}
   ),
 
 
@@ -350,7 +367,7 @@ local global_keybindings = {
   awful.key(
     { SUPER, }, "Escape",
     awful.tag.history.restore,
-    {description = "Go back", group = "Tag"}
+    {description = "Go back", group = "tag"}
   ),
 
   -- Focus related keybindings
@@ -400,21 +417,21 @@ local global_keybindings = {
     function()
       awful.spawn("redshift -P -O 5500")
     end,
-    {description="Activate bluelight filter (Day)", group="Applications"}
+    {description = "Activate bluelight filter (Day)", group = "applications"}
   ),
   awful.key(
     { SUPER, "Control" }, "v",
     function()
       awful.spawn("redshift -P -O 3500")
     end,
-    {description="Activate bluelight filter (Night)", group="Applications"}
+    {description = "Activate bluelight filter (Night)", group = "applications"}
   ),
   awful.key(
     { SUPER, "Control" }, "n",
     function()
       awful.spawn("redshift -x")
     end,
-    {description="Deactivate bluelight filter", group="Applications"}
+    {description = "Deactivate bluelight filter", group = "applications"}
   ),
 
   awful.key(
@@ -422,14 +439,14 @@ local global_keybindings = {
     function()
       awful.spawn("picom")
     end,
-    {description="Turn on compositor (picom)", group="Applications"}
+    {description="Turn on compositor (picom)", group="applications"}
   ),
   awful.key(
     { SUPER, "Control" }, "u",
     function()
       awful.spawn("pkill picom")
     end,
-    {description="Turn off compositor (picom)", group="Applications"}
+    {description="Turn off compositor (picom)", group="applications"}
   ),
 
   awful.key(
@@ -437,7 +454,7 @@ local global_keybindings = {
     function()
       awful.spawn("gpick")
     end,
-    {description="Open color picker", group="Applications"}
+    {description="Open color picker", group="applications"}
   ),
 
   -- Applications (super + alt)
@@ -446,14 +463,14 @@ local global_keybindings = {
     function()
       awful.spawn("chromium")
     end,
-    {description="Launch Chromium", group="Applications"}
+    {description="Launch Chromium", group="applications"}
   ),
   awful.key(
     { SUPER, ALT }, "e",
     function()
       awful.spawn("firefox")
     end,
-    {description="Launch Firefox", group="Applications"}
+    {description="Launch Firefox", group="applications"}
   ),
 
   awful.key(
@@ -461,7 +478,7 @@ local global_keybindings = {
     function()
       awful.spawn("thunar")
     end,
-    {description="Launch Thunar", group="Applications"}
+    {description="Launch Thunar", group="applications"}
   ),
 
   awful.key(
@@ -470,7 +487,7 @@ local global_keybindings = {
       --awful.spawn("alacritty -e nvim")
       awful.spawn("kitty nvim")
     end,
-    {description="Launch Neovim", group="Applications"}
+    {description="Launch Neovim", group="applications"}
   ),
   awful.key(
     { SUPER, ALT }, "n",
@@ -478,7 +495,7 @@ local global_keybindings = {
       --awful.spawn("alacritty -e bash ~/.bin/nnn_run -T v")
       awful.spawn("kitty ~/.bin/nnn_run -T v")
     end,
-    {description="Launch nnn", group="Applications"}
+    {description="Launch nnn", group="applications"}
   ),
 
   -- System Keys
@@ -487,28 +504,28 @@ local global_keybindings = {
     function()
       awful.spawn("flameshot full -p " .. os.getenv("HOME") .. "/Pictures/SS/")
     end,
-    {description="Take Full-screen screenshot", group="System Keys"}
+    {description="Take Full-screen screenshot", group="System"}
   ),
   awful.key(
     { SUPER }, "Print",
     function()
       awful.spawn("flameshot gui")
     end,
-    {description="Open screenshot gui", group="System Keys"}
+    {description="Open screenshot gui", group="System"}
   ),
   awful.key(
     { ALT }, "Print",
     function()
       awful.spawn("flameshot full -d 5000 -p " .. os.getenv("HOME") .. "/Pictures/SS/")
     end,
-    {description="Take full-screen screenshot after 5 seconds", group="System Keys"}
+    {description="Take full-screen screenshot after 5 seconds", group="System"}
   ),
   awful.key(
     { "Shift" }, "Print",
     function()
       awful.spawn("flameshot full -d 10000 -p " .. os.getenv("HOME") .. "/Pictures/SS/")
     end,
-    {description="Take full-screen screenshot after 10 seconds", group="System Keys"}
+    {description="Take full-screen screenshot after 10 seconds", group="System"}
   ),
 
   awful.key(
@@ -516,28 +533,28 @@ local global_keybindings = {
     function()
       awful.spawn("brightnessctl -d \"intel_backlight\" set +2%")
     end,
-    {description="Increase screen brightness", group="System Keys"}
+    {description="Increase screen brightness", group="System"}
   ),
   awful.key(
     { }, "XF86MonBrightnessDown",
     function()
       awful.spawn("brightnessctl -d \"intel_backlight\" set 2%-")
     end,
-    {description="Decrease screen brightness", group="System Keys"}
+    {description="Decrease screen brightness", group="System"}
   ),
   awful.key(
     { SUPER }, "F1",
     function()
       awful.spawn("brightnessctl -d \"intel_backlight\" set 2%-")
     end,
-    {description="Decrease screen brightness", group="System Keys"}
+    {description="Decrease screen brightness", group="System"}
   ),
   awful.key(
     { SUPER }, "F2",
     function()
       awful.spawn("brightnessctl -d \"intel_backlight\" set +2%")
     end,
-    {description="Increase screen brightness", group="System Keys"}
+    {description="Increase screen brightness", group="System"}
   ),
 
   awful.key(
@@ -545,42 +562,42 @@ local global_keybindings = {
     function()
       awful.spawn("pactl set-sink-volume 0 +2%")
     end,
-    {description="Increase volume", group="System Keys"}
+    {description="Increase volume", group="System"}
   ),
   awful.key(
     { }, "XF86AudioLowerVolume",
     function()
       awful.spawn("pactl set-sink-volume 0 -2%")
     end,
-    {description="Decrease volume", group="System Keys"}
+    {description="Decrease volume", group="System"}
   ),
   awful.key(
     { }, "XF86AudioMute",
     function()
       awful.spawn("pactl set-sink-mute 0 toggle")
     end,
-    {description="Mute volume", group="System Keys"}
+    {description="Mute volume", group="System"}
   ),
   awful.key(
     { SUPER }, "F5",
     function()
       awful.spawn("pactl set-sink-volume 0 -2%")
     end,
-    {description="Decrease volume", group="System Keys"}
+    {description="Decrease volume", group="System"}
   ),
   awful.key(
     { SUPER }, "F6",
     function()
       awful.spawn("pactl set-sink-volume 0 +2%")
     end,
-    {description="Increase volume", group="System Keys"}
+    {description="Increase volume", group="System"}
   ),
   awful.key(
     { SUPER }, "F7",
     function()
       awful.spawn("pactl set-sink-mute 0 toggle")
     end,
-    {description = "Mute volume", group = "System Keys"}
+    {description = "Mute volume", group = "System"}
   ),
 
   awful.key(
@@ -588,14 +605,14 @@ local global_keybindings = {
     function()
       awful.spawn("nmcli radio all off && notify-send \"Turned off wifi\"")
     end,
-    {description = "Turn off wifi", group = "System Keys"}
+    {description = "Turn off wifi", group = "System"}
   ),
   awful.key(
     { SUPER }, "F10",
     function()
       awful.spawn("nmcli radio all on && notify-send \"Turned on wifi\"")
     end,
-    {description = "Turn on wifi", group = "System Keys"}
+    {description = "Turn on wifi", group = "System"}
   ),
 }
 
@@ -651,7 +668,7 @@ local client_keybindings = {
   ),
   awful.key(
     {
-      modifiers = { SUPER, },
+      modifiers = { SUPER, "Control" },
       key = "t",
       on_press =
         function(c)
@@ -745,9 +762,6 @@ local client_mousebindings = {
   ),
 }
 
-
-awful.keyboard.append_global_keybindings(global_keybindings)
-
 client.connect_signal(
   "request::default_keybindings",
   function()
@@ -755,6 +769,7 @@ client.connect_signal(
   end
 )
 
+awful.keyboard.append_global_keybindings(global_keybindings)
 
 awful.mouse.append_global_mousebindings(global_mousebindings)
 
