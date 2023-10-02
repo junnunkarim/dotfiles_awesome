@@ -143,12 +143,12 @@ screen.connect_signal(
       border_width = 6,
       border_color = bar_colors.border,
       margins = {
-        top = beautiful.useless_gap + beautiful.border_width,
+        --top = beautiful.useless_gap + beautiful.border_width,
         left = beautiful.useless_gap + (beautiful.border_width * 2),
         right = beautiful.useless_gap + (beautiful.border_width * 2),
       },
       shape = function(cr, w, h)
-        gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 15) -- t-left, t-right, b-right, b-left
+        gears.shape.partially_rounded_rect(cr, w, h, false, false, true, true, 15) -- t-left, t-right, b-right, b-left
       end,
     }
   end

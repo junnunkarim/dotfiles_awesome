@@ -113,7 +113,7 @@ inputbar {
     background-color: inherit;
   }
   entry {
-    placeholder: "Search...";
+    placeholder: " search...";
     padding: 15px 10px 10px 10px;
 
     background-color: inherit;

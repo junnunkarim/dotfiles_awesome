@@ -485,9 +485,10 @@ local global_keybindings = {
     { SUPER, ALT }, "v",
     function()
       --awful.spawn("alacritty -e nvim")
-      awful.spawn("kitty nvim")
+      --awful.spawn("kitty nvim")
+      awful.spawn("neovide")
     end,
-    {description="Launch Neovim", group="applications"}
+    {description="Launch Neovide(nvim)", group="applications"}
   ),
   awful.key(
     { SUPER, ALT }, "n",

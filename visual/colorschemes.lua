@@ -57,6 +57,25 @@ GRUVBOX = {
   orange2 = "#fe8019",
 }
 
+NORD = {
+  white = "#d8dee9",
+  white1 = "#e5e9f0",
+  white2 = "#eceff4",
+  black = "#3b4254",
+  black0 = "#2e3440",
+  black1 = "#434c5e",
+  black2 = "#4c566a",
+  blue1 = "#8fbcbb",
+  blue2 = "#88c0d0",
+  blue3 = "#81a1c1",
+  blue4 = "#5e81ac",
+  red1 = "#bf616a",
+  orange1 = "#d08770",
+  yellow1 = "#ebcb8b",
+  green1 = "#a3be8c",
+  purple1 = "#b48ead",
+}
+
 ROSE_PINE = {
   black1 = "#26233a", -- overlay
   black2 = "#1f1d2e", -- surface
