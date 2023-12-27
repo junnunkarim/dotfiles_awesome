@@ -7,7 +7,7 @@ local function autostart_programs()
   awful.spawn.single_instance("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
   --awful.spawn.single_instance("polkit-gnome-authentication-agent-1")
   --awful.spawn.single_instance("xfce4-power-manager")
-  awful.spawn.single_instance("picom")
+  awful.spawn.single_instance("picom -b")
   awful.spawn.single_instance("redshift -P -O 5500")
 
   awful.spawn.with_shell("~/.config/awesome/core/autostart_daemons.sh")

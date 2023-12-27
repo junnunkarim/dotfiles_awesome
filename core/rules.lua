@@ -214,6 +214,8 @@ ruled.client.connect_signal(
           "Ryujinx",
           "yuzu",
           "retroarch",
+          "steamwebhelper",
+          "steam",
         }
       },
       properties = {

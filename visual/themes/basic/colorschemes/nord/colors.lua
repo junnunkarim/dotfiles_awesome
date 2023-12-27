@@ -69,10 +69,10 @@ tasklist_colors = {
   fg = colors.blue4,
   fg_focus = colors.white,
   fg_minimize = colors.red1,
-  bg = colors.black,
+  bg = colors.black0,
   bg_focus = colors.black2,
   bg_minimize = colors.black,
-  border = colors.black,
+  border = colors.black0,
 }
 
 titlebar_colors = {

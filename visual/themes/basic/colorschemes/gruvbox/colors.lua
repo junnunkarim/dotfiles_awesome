@@ -66,13 +66,13 @@ taglist_colors = {
 }
 
 tasklist_colors = {
-  fg = colors.black,
+  fg = colors.orange1,
   fg_focus = colors.white,
-  fg_minimize = colors.gray1,
-  bg = colors.orange2,
+  fg_minimize = colors.red2,
+  bg = colors.black,
   bg_focus = colors.orange1,
-  bg_minimize = colors.orange2,
-  border = colors.orange2,
+  bg_minimize = colors.black,
+  border = colors.black,
 }
 
 titlebar_colors = {
