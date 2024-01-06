@@ -1,6 +1,7 @@
 * {
+  transparent: #18192670;
   rosewater: #f4dbd6;
-  flamingo:	#f0c6c6;
+  flamingo: #f0c6c6;
   pink: #f5bde6;
   mauve: #c6a0f6;
   red: #ed8796;

@@ -1,4 +1,5 @@
 * {
+  transparent: #28282870;
   white: #ebdbb2;
   black: #282828;
   black0: #1d2021;
@@ -19,8 +20,8 @@
   orange1: #d65d0e;
   orange2: #fe8019;
 
-  background: var(black);
-  background-1: var(black0);
+  background: var(black0);
+  background-1: var(black);
   foreground: var(white);
   foreground-1: var(gray2);
   selected: var(blue2);

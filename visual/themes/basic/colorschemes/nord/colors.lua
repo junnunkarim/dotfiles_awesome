@@ -9,7 +9,7 @@ other_colors = {
   too_dark = colors.black0,
 
   font = colors.white,
-  bg = colors.black,
+  bg = colors.black0,
   border = colors.black,
 }
 
@@ -70,8 +70,8 @@ tasklist_colors = {
   fg_focus = colors.white,
   fg_minimize = colors.red1,
   bg = colors.black0,
-  bg_focus = colors.black2,
-  bg_minimize = colors.black,
+  bg_focus = colors.blue4,
+  bg_minimize = colors.red1,
   border = colors.black0,
 }
 

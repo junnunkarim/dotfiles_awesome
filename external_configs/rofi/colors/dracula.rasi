@@ -1,4 +1,5 @@
 * {
+  transparent: #282a3670;
   black0: #282a36;
   black1: #44475a;
   white: #f8f8f2;

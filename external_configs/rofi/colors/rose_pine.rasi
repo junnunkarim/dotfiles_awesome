@@ -1,4 +1,5 @@
 * {
+  transparent: #19172470;
   base: #191724;
   surface: #1f1d2e;
   overlay: #26233a;
@@ -17,7 +18,7 @@
   iris1: #907aa9;
 
   background: var(base);
-  background-1: var(surface);
+  background-1: var(overlay);
   foreground: var(text);
   foreground-1: var(muted);
   selected: var(rose1);

@@ -15,11 +15,12 @@ require("visual.themes." .. THEME_COLORSCHEME .. ".colors")
 
 local colors = GRUVBOX
 local theme = {
-    font = "Iosevka Nerd Font Mono 10",
+    font_name           = "Iosevka Nerd Font Mono",
+    font                = "Iosevka Nerd Font Mono 10",
     -- font = "Li Alinur Banglaborno Unicode 12",
     -- font = "CozetteVector 10",
-    taglist_font = "Iosevka Nerd Font Mono 20",
-    tasklist_font = "Iosevka Nerd Font Mono 20",
+    taglist_font        = "Iosevka Nerd Font Mono 20",
+    tasklist_font       = "Iosevka Nerd Font Mono 20",
 
     useless_gap         = dpi(5),
     border_width        = dpi(2),
@@ -29,18 +30,18 @@ local theme = {
 
     -- TODO: need to implement more robust and modular solution
     -- breaks hotkeys_popup widget if the values aren't set
-    bg_normal     = taglist_colors.bg,
-    bg_focus      = taglist_colors.bg_focus,
-    bg_urgent     = taglist_colors.bg_urgent,
-    bg_minimize   = tasklist_colors.bg_minimize,
-    bg_systray    = tray_colors.fg,
+    bg_normal           = taglist_colors.bg,
+    bg_focus            = taglist_colors.bg_focus,
+    bg_urgent           = taglist_colors.bg_urgent,
+    bg_minimize         = tasklist_colors.bg_minimize,
+    bg_systray          = tray_colors.fg,
 
-    fr_normal     = taglist_colors.fg,
-    fg_focus      = taglist_colors.fg_focus,
-    fg_urgent     = taglist_colors.fg_urgent,
-    fg_minimize   = tasklist_colors.fg_minimize,
+    fr_normal           = taglist_colors.fg,
+    fg_focus            = taglist_colors.fg_focus,
+    fg_urgent           = taglist_colors.fg_urgent,
+    fg_minimize         = tasklist_colors.fg_minimize,
 
-    taglist_spacing = 3,
+    taglist_spacing     = 3,
 
     -- There are other variable sets
     -- overriding the default one when
@@ -66,9 +67,9 @@ local theme = {
     -- Variables set for theming the menu:
     -- menu_[bg|fg]_[normal|focus]
     -- menu_[border_color|border_width]
-    menu_submenu_icon = themes_path.."default/submenu.png",
-    menu_height = dpi(20),
-    menu_width  = dpi(200),
+    menu_submenu_icon = themes_path .. "default/submenu.png",
+    menu_height       = dpi(20),
+    menu_width        = dpi(200),
 
     -- You can add as many variables as
     -- you wish and access them by using
@@ -104,25 +105,25 @@ local theme = {
     titlebar_maximized_button_focus_active  = themes_path.."default/titlebar/maximized_focus_active.png"
 
     wallpaper = themes_path.."default/background.png"
-    ]]--
+    ]] --
 
     -- You can use your own layout icons like this:
-    layout_fairh = themes_path.."default/layouts/fairhw.png",
-    layout_fairv = themes_path.."default/layouts/fairvw.png",
-    layout_floating  = themes_path.."default/layouts/floatingw.png",
-    layout_magnifier = themes_path.."default/layouts/magnifierw.png",
-    layout_max = themes_path.."default/layouts/maxw.png",
-    layout_fullscreen = themes_path.."default/layouts/fullscreenw.png",
-    layout_tilebottom = themes_path.."default/layouts/tilebottomw.png",
-    layout_tileleft   = themes_path.."default/layouts/tileleftw.png",
-    layout_tile = themes_path.."default/layouts/tilew.png",
-    layout_tiletop = themes_path.."default/layouts/tiletopw.png",
-    layout_spiral  = themes_path.."default/layouts/spiralw.png",
-    layout_dwindle = themes_path.."default/layouts/dwindlew.png",
-    layout_cornernw = themes_path.."default/layouts/cornernww.png",
-    layout_cornerne = themes_path.."default/layouts/cornernew.png",
-    layout_cornersw = themes_path.."default/layouts/cornersww.png",
-    layout_cornerse = themes_path.."default/layouts/cornersew.png",
+    layout_fairh                     = themes_path .. "default/layouts/fairhw.png",
+    layout_fairv                     = themes_path .. "default/layouts/fairvw.png",
+    layout_floating                  = themes_path .. "default/layouts/floatingw.png",
+    layout_magnifier                 = themes_path .. "default/layouts/magnifierw.png",
+    layout_max                       = themes_path .. "default/layouts/maxw.png",
+    layout_fullscreen                = themes_path .. "default/layouts/fullscreenw.png",
+    layout_tilebottom                = themes_path .. "default/layouts/tilebottomw.png",
+    layout_tileleft                  = themes_path .. "default/layouts/tileleftw.png",
+    layout_tile                      = themes_path .. "default/layouts/tilew.png",
+    layout_tiletop                   = themes_path .. "default/layouts/tiletopw.png",
+    layout_spiral                    = themes_path .. "default/layouts/spiralw.png",
+    layout_dwindle                   = themes_path .. "default/layouts/dwindlew.png",
+    layout_cornernw                  = themes_path .. "default/layouts/cornernww.png",
+    layout_cornerne                  = themes_path .. "default/layouts/cornernew.png",
+    layout_cornersw                  = themes_path .. "default/layouts/cornersww.png",
+    layout_cornerse                  = themes_path .. "default/layouts/cornersew.png",
 
     -- Generate Awesome icon:
     --awesome_icon = theme_assets.awesome_icon(
@@ -132,18 +133,18 @@ local theme = {
     -- Define the icon for application icons. If not set then the icons
     -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
     --icon_theme = os.getenv("HOME") .. "/.icons/Papirus/"
-    icon_theme = "Papirus",
+    icon_theme                       = "Papirus",
 
-    tag_preview_widget_border_radius = 0,        -- Border radius of the widget (With AA)
-    tag_preview_client_border_radius = 0,        -- Border radius of each client in the widget (With AA)
-    tag_preview_client_opacity = 1.0,            -- Opacity of each client
-    tag_preview_client_bg = "#000000",           -- The bg color of each client
-    tag_preview_client_border_color = colors.blue2, -- The border color of each client
-    tag_preview_client_border_width = 0,         -- The border width of each client
-    tag_preview_widget_bg = "#000000",           -- The bg color of the widget
-    tag_preview_widget_border_color = colors.blue2, -- The border color of the widget
-    tag_preview_widget_border_width = 3,         -- The border width of the widget
-    tag_preview_widget_margin = 0,               -- The margin of the widget
+    tag_preview_widget_border_radius = 0,            -- Border radius of the widget (With AA)
+    tag_preview_client_border_radius = 0,            -- Border radius of each client in the widget (With AA)
+    tag_preview_client_opacity       = 1.0,          -- Opacity of each client
+    tag_preview_client_bg            = "#000000",    -- The bg color of each client
+    tag_preview_client_border_color  = colors.blue2, -- The border color of each client
+    tag_preview_client_border_width  = 0,            -- The border width of each client
+    tag_preview_widget_bg            = "#000000",    -- The bg color of the widget
+    tag_preview_widget_border_color  = colors.blue2, -- The border color of the widget
+    tag_preview_widget_border_width  = 3,            -- The border width of the widget
+    tag_preview_widget_margin        = 0,            -- The margin of the widget
 }
 
 

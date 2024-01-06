@@ -1,4 +1,5 @@
 * {
+  transparent: #141b1e70;
   bg: #141b1e;
   lighter-bg: #232a2d;
   red: #e57474;

@@ -22,7 +22,8 @@ screen.connect_signal(
       s,
       awful.layout.layouts[1]
     )
-    ]]--
+    ]]
+    --
 
     awful.tag.add("", {
       index = 1,
@@ -86,7 +87,7 @@ screen.connect_signal(
 
     s.taglist = get_taglist(s)
 
-    s.tasklist = get_tasklist(s)
+    -- s.tasklist = get_tasklist(s)
 
     s.systray = get_systray(s)
 

@@ -1,4 +1,4 @@
 THEME = "basic"
-COLORSCHEME = "gruvbox"
+COLORSCHEME = "nord"
 
 THEME_COLORSCHEME = THEME .. ".colorschemes." .. COLORSCHEME

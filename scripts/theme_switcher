@@ -32,7 +32,7 @@ switch_wzterm_colorscheme()
 }
 switch_alacritty_colorscheme()
 {
-	cp ${alacritty_dir}/colorscheme/$1.yml ${alacritty_dir}/color.yml
+	cp ${alacritty_dir}/colorscheme/$1.toml ${alacritty_dir}/color.toml
 }
 #switch_rofi_theme()
 #{

@@ -71,7 +71,7 @@ tasklist_colors = {
   fg_minimize = colors.red1,
   bg = colors.black,
   bg_focus = colors.gray1,
-  bg_minimize = colors.black,
+  bg_minimize = colors.red1,
   border = colors.black,
 }
 

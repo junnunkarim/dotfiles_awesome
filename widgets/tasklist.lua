@@ -56,9 +56,10 @@ if available_bling then
     }
   }
 end
-]]--
+]]
+   --
 
-get_tasklist = function (s)
+get_tasklist = function(s)
   -- Create a tasklist widget
   tasklist_core = awful.widget.tasklist {
     screen = s,
@@ -82,8 +83,8 @@ get_tasklist = function (s)
     },
     buttons = {
       awful.button(
-        { }, 1,
-        function (c)
+        {}, 1,
+        function(c)
           c:activate {
             context = "tasklist",
             action = "toggle_minimization"
@@ -91,7 +92,7 @@ get_tasklist = function (s)
         end
       ),
       awful.button(
-        { }, 3,
+        {}, 3,
         function()
           awful.menu.client_list {
             theme = {
@@ -101,13 +102,13 @@ get_tasklist = function (s)
         end
       ),
       awful.button(
-        { }, 4,
+        {}, 4,
         function()
           awful.client.focus.byidx(-1)
         end
       ),
       awful.button(
-        { }, 5,
+        {}, 5,
         function()
           awful.client.focus.byidx(1)
         end
@@ -125,7 +126,7 @@ get_tasklist = function (s)
             halign = "center",
             valign = "center",
             widget = awful.widget.clienticon,
-            ]]--
+            ]] --
 
             id = "text_role",
             halign = "center",
@@ -150,25 +151,25 @@ get_tasklist = function (s)
   }
 
   tasklist = wibox.widget {
-      { -- background
-        { -- put it in a specific sector
-          {
-            widget = tasklist_core,
-          },
-          margins = {
-            left = 5,
-            right = 5,
-          },
-          layout = wibox.container.margin
+    {   -- background
+      { -- put it in a specific sector
+        {
+          widget = tasklist_core,
         },
-        shape = function(cr, w, h)
-          gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 20) -- t-left, t-right, b-right, b-left
-        end,
-        bg = tasklist_colors.bg,
-        shape_border_width = 3,
-        shape_border_color = tasklist_colors.border,
-        widget = wibox.container.background,
+        margins = {
+          left = 5,
+          right = 5,
+        },
+        layout = wibox.container.margin
       },
+      shape = function(cr, w, h)
+        gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 20) -- t-left, t-right, b-right, b-left
+      end,
+      bg = tasklist_colors.bg,
+      shape_border_width = 3,
+      shape_border_color = tasklist_colors.border,
+      widget = wibox.container.background,
+    },
     strategy = "max",
     width = 600,
     widget = wibox.container.constraint,

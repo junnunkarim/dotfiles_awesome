@@ -4,6 +4,8 @@ local colors = ROSE_PINE
 
 other_colors = {
   border = colors.black3,
+  font = colors.white,
+  bg = colors.black1,
 }
 
 ---{{{ Widget Colors
@@ -62,9 +64,9 @@ tasklist_colors = {
   fg = colors.black3,
   fg_focus = colors.black3,
   fg_minimize = colors.gray2,
-  bg = colors.orange1,
+  bg = colors.black3,
   bg_focus = colors.orange2,
-  bg_minimize = colors.orange1,
+  bg_minimize = colors.red2,
   border = colors.orange2,
 }
 

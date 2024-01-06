@@ -5,6 +5,8 @@ require("awful.autofocus")
 -- Declarative object management
 local ruled = require("ruled")
 
+local popup_tasklist = require("widgets.popup_tasklist")
+
 
 -- {{{ Rules
 -- Rules to apply to new clients.
@@ -14,7 +16,7 @@ ruled.client.connect_signal(
     -- All clients will match this rule.
     ruled.client.append_rule {
       id = "global",
-      rule = { },
+      rule = {},
       properties = {
         focus = awful.client.focus.filter,
         raise = true,
@@ -52,12 +54,12 @@ ruled.client.connect_signal(
         -- Note that the name property shown in xprop might be set slightly after creation of the client
         -- and the name shown there might not match defined rules here.
         name = {
-          "Event Tester",  -- xev.
+          "Event Tester", -- xev.
         },
         role = {
-          "AlarmWindow",    -- Thunderbird's calendar.
-          "ConfigManager",  -- Thunderbird's about:config.
-          "pop-up",         -- e.g. Google Chrome's (detached) Developer Tools.
+          "AlarmWindow",   -- Thunderbird's calendar.
+          "ConfigManager", -- Thunderbird's about:config.
+          "pop-up",        -- e.g. Google Chrome's (detached) Developer Tools.
         }
       },
       properties = {
@@ -246,7 +248,6 @@ ruled.client.connect_signal(
   end
 )
 
-
 -- Enable sloppy focus, so that focus follows mouse.
 client.connect_signal(
   "mouse::enter",
@@ -255,6 +256,17 @@ client.connect_signal(
       context = "mouse_enter",
       raise = false,
     }
+  end
+)
+
+-- enable popup tasklist widget with auto-hide
+client.connect_signal(
+  "focus",
+  function(s)
+    if not popup_tasklist.check_visibility() then
+      popup_tasklist.toggle_visibility() -- show popup on focus change
+      popup_tasklist.auto_hide(2)        -- hides the popup after 2 seconds
+    end
   end
 )
 -- }}}

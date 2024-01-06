@@ -6,7 +6,7 @@ require("visual.options")
 require("visual.themes." .. THEME_COLORSCHEME .. ".colors")
 
 
-app_launcher = wibox.widget{
+app_launcher = wibox.widget {
   {
     { -- widget
       font = "Iosevka Nerd Font Mono 20",
@@ -18,9 +18,9 @@ app_launcher = wibox.widget{
 
     buttons = {
       awful.button(
-        { }, 1,
+        {}, 1,
         function()
-          awful.spawn(os.getenv("HOME") .. "/.bin/rofi_run")
+          awful.spawn(os.getenv("HOME") .. "/.config/awesome/scripts/rofi_run")
         end
       ),
     },
