@@ -9,6 +9,7 @@ require("core.utils")
 require("visual.options")
 require("visual.themes." .. THEME_COLORSCHEME .. ".colors")
 
+local systray = require("widgets.tray")
 
 -- {{{ Wibar
 screen.connect_signal(
@@ -89,7 +90,7 @@ screen.connect_signal(
 
     -- s.tasklist = get_tasklist(s)
 
-    s.systray = get_systray(s)
+    -- s.systray = get_systray(s)
 
     -- main bar
     -- Create the wibox
@@ -126,7 +127,7 @@ screen.connect_signal(
             battery,
             time,
             date,
-            s.systray,
+            systray.tray,
 
             spacing = 10,
             layout = wibox.layout.fixed.horizontal,

@@ -26,7 +26,7 @@ end
 if available_bling then
   scratch_term = bling.module.scratchpad {
     command = "konsole --name scratch_term", -- How to spawn the scratchpad
-    -- command = "alacritty --class scratch_term --config-file $HOME/.config/alacritty/alacritty_scratchpad.yml", -- How to spawn the scratchpad
+    -- command = "alacritty --class scratch_term --config-file $HOME/.config/alacritty/alacritty_scratchpad.toml", -- How to spawn the scratchpad
     --command = "kitty --class scratch_term", -- How to spawn the scratchpad
     rule = {
       instance = "scratch_term"

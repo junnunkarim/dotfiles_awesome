@@ -48,8 +48,8 @@ date_colors = {
 tray_colors = {
   fg = other_colors.dark,
   fg_icon = colors.black,
-  bg = colors.red2,
-  border = colors.red1,
+  bg = colors.orange2,
+  border = colors.orange1,
 }
 ---}}}
 

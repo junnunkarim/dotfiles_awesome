@@ -36,8 +36,7 @@ window {
   // 2 fields: top&bottom left&right
   // 3 fields: top, left&right, bottom
   // 4 fields: top, right, bottom, left
-  padding: 220px 680px 280px 680px;
-  //padding: 200px 680px 300px 680px;
+  padding: 220px 680px 220px 680px;
 
   transparency: "real";
   background-color: var(transparent);
@@ -62,7 +61,7 @@ listview {
   scrollbar: true;
 
   padding: 5px 0px; // top-bottom left-right
-  margin: 15px 0px;
+  margin: 15px 0px 5px 0px;
   border-radius: 30px;
 
   text-color: var(foreground);

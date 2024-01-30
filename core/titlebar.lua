@@ -61,6 +61,8 @@ client.connect_signal("request::titlebars", function(c)
           -- {},
           layout = wibox.layout.align.horizontal,
         },
+        -- fg = taglist_colors.fg,
+        -- bg = taglist_colors.bg,
         fg = other_colors.font,
         bg = other_colors.bg,
         shape = function(cr, w, h)

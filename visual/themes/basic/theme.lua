@@ -15,33 +15,34 @@ require("visual.themes." .. THEME_COLORSCHEME .. ".colors")
 
 local colors = GRUVBOX
 local theme = {
-    font_name           = "Iosevka Nerd Font Mono",
-    font                = "Iosevka Nerd Font Mono 10",
+    font_name            = "Iosevka Nerd Font Mono",
+    font                 = "Iosevka Nerd Font Mono 10",
     -- font = "Li Alinur Banglaborno Unicode 12",
     -- font = "CozetteVector 10",
-    taglist_font        = "Iosevka Nerd Font Mono 20",
-    tasklist_font       = "Iosevka Nerd Font Mono 20",
+    taglist_font         = "Iosevka Nerd Font Mono 20",
+    tasklist_font        = "Iosevka Nerd Font Mono 20",
 
-    useless_gap         = dpi(5),
-    border_width        = dpi(2),
-    border_color_normal = titlebar_colors.border,
-    border_color_active = titlebar_colors.border_focus,
+    useless_gap          = dpi(5),
+    border_width         = dpi(2),
+    border_color_normal  = titlebar_colors.border,
+    border_color_active  = titlebar_colors.border_focus,
     --border_color_marked = "#91231c",
 
     -- TODO: need to implement more robust and modular solution
     -- breaks hotkeys_popup widget if the values aren't set
-    bg_normal           = taglist_colors.bg,
-    bg_focus            = taglist_colors.bg_focus,
-    bg_urgent           = taglist_colors.bg_urgent,
-    bg_minimize         = tasklist_colors.bg_minimize,
-    bg_systray          = tray_colors.fg,
+    bg_normal            = taglist_colors.bg,
+    bg_focus             = taglist_colors.bg_focus,
+    bg_urgent            = taglist_colors.bg_urgent,
+    bg_minimize          = tasklist_colors.bg_minimize,
+    bg_systray           = tray_colors.fg,
 
-    fr_normal           = taglist_colors.fg,
-    fg_focus            = taglist_colors.fg_focus,
-    fg_urgent           = taglist_colors.fg_urgent,
-    fg_minimize         = tasklist_colors.fg_minimize,
+    fr_normal            = taglist_colors.fg,
+    fg_focus             = taglist_colors.fg_focus,
+    fg_urgent            = taglist_colors.fg_urgent,
+    fg_minimize          = tasklist_colors.fg_minimize,
 
-    taglist_spacing     = 3,
+    taglist_spacing      = 3,
+    systray_icon_spacing = 5,
 
     -- There are other variable sets
     -- overriding the default one when

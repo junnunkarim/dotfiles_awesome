@@ -4,6 +4,7 @@
 dmenu_dir="$HOME/.config/dmenu"
 rofi_dir="$HOME/.config/awesome/external_configs/rofi"
 alacritty_dir="$HOME/.config/alacritty"
+konsole_dir="$HOME/.local/share/konsole"
 kitty_dir="$HOME/.config/kitty"
 zathura_dir="$HOME/.config/zathura"
 
@@ -12,10 +13,11 @@ prompt="rofi -dmenu -i -theme $HOME/.config/awesome/external_configs/rofi/script
 
 switch_theme()
 {
-	cp ${rofi_dir}/colors/$1.rasi ${rofi_dir}/colors/colors.rasi
-	cp ${kitty_dir}/colorscheme/$1.conf ${kitty_dir}/color.conf
-	cp ${zathura_dir}/theme/$1 ${zathura_dir}/theme.color
-	
+  cp ${rofi_dir}/colors/$1.rasi ${rofi_dir}/colors/colors.rasi
+  cp ${kitty_dir}/colorscheme/$1.conf ${kitty_dir}/color.conf
+  cp ${zathura_dir}/theme/$1 ${zathura_dir}/theme.color
+  cp ${konsole_dir}/$1.colorscheme ${konsole_dir}/color.colorscheme
+
   switch_awesomewm_colorscheme $1
   pkill -HUP awesome
 }

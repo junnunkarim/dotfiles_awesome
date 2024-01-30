@@ -6,6 +6,7 @@ require("awful.autofocus")
 local ruled = require("ruled")
 
 local popup_tasklist = require("widgets.popup_tasklist")
+local systray = require("widgets.tray")
 
 
 -- {{{ Rules
@@ -91,6 +92,7 @@ ruled.client.connect_signal(
           --"org.wezfurlong.wezterm",
           --"Alacritty",
           "kitty",
+          "konsole",
           "st-256color",
         }
       },
@@ -269,4 +271,15 @@ client.connect_signal(
     end
   end
 )
+
+-- gears.timer {
+--   timeout   = 1, -- Time between checks
+--   call_now  = true,
+--   autostart = true,
+--   callback  = function()
+--     if awesome.systray() == 0 then -- if systray has no elements
+--       systray.toggle_visibility()
+--     end
+--   end
+-- }
 -- }}}
