@@ -57,7 +57,10 @@ popup_tasklist.popup = awful.popup {
   -- not visible when just created
   -- only visible when focus is switched
   visible   = false,
-  placement = awful.placement.centered,
+  -- placement = awful.placement.bottom,
+  placement = function(w)
+    awful.placement.bottom(w, { offset = { y = -200 } })
+  end,
   shape     = function(cr, w, h)
     gears.shape.partially_rounded_rect(cr, w, h, true, true, true, true, 30) -- t-left, t-right, b-right, b-left
   end,
