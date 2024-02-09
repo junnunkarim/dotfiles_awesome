@@ -5,7 +5,7 @@ local wibox = require("wibox")
 require("core.utils")
 
 -- Bling library
-local available_bling, bling = pcall(require, "custom_modules.bling")
+-- local available_bling, bling = pcall(require, "custom_modules.bling")
 -- }}}
 
 require("visual.options")
@@ -37,7 +37,7 @@ if available_bling then
   }
 end
 ]]
-   --
+--
 
 get_taglist = function(s)
   -- Create a taglist widget
@@ -103,7 +103,7 @@ get_taglist = function(s)
       ),
     },
     widget_template = {
-      { -- background
+      {   -- background
         { -- margin
           id = "text_role",
           align = "center",
@@ -137,7 +137,7 @@ get_taglist = function(s)
             end
           end
           ]]
-             --
+            --
 
             if self.bg ~= taglist_colors.hover then
               self.backup = self.bg

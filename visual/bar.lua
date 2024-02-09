@@ -10,6 +10,7 @@ require("visual.options")
 require("visual.themes." .. THEME_COLORSCHEME .. ".colors")
 
 local systray = require("widgets.tray")
+local c_count_table = require("widgets.client_count")
 
 -- {{{ Wibar
 screen.connect_signal(
@@ -26,55 +27,64 @@ screen.connect_signal(
     ]]
     --
 
-    awful.tag.add("", {
+    --
+    awful.tag.add("󰲠", {
       index = 1,
       screen = s,
       layout = awful.layout.suit.tile,
       selected = true,
     })
-    awful.tag.add("󱃖", {
+    --󱃖
+    awful.tag.add("󰲢", {
       index = 2,
       screen = s,
       layout = awful.layout.suit.max,
       --selected = true,
     })
-    awful.tag.add("", {
+    --
+    awful.tag.add("󰲤", {
       index = 3,
       screen = s,
       layout = awful.layout.suit.max,
       --selected = true,
     })
-    awful.tag.add("", {
+    --
+    awful.tag.add("󰲦", {
       index = 4,
       screen = s,
       layout = awful.layout.suit.max,
       --selected = true,
     })
-    awful.tag.add("", {
+    --
+    awful.tag.add("󰲨", {
       index = 5,
       screen = s,
       layout = awful.layout.suit.max,
       --selected = true,
     })
-    awful.tag.add("", {
+    --
+    awful.tag.add("󰲪", {
       index = 6,
       screen = s,
       layout = awful.layout.suit.max,
       --selected = true,
     })
-    awful.tag.add("󰚢", {
+    --󰚢
+    awful.tag.add("󰲬", {
       index = 7,
       screen = s,
       layout = awful.layout.suit.max,
       --selected = true,
     })
-    awful.tag.add("󰸳", {
+    --󰸳
+    awful.tag.add("󰲮", {
       index = 8,
       screen = s,
       layout = awful.layout.suit.max,
       --selected = true,
     })
-    awful.tag.add("", {
+    --
+    awful.tag.add("󰲰", {
       index = 9,
       screen = s,
       layout = awful.layout.suit.max,
@@ -88,6 +98,8 @@ screen.connect_signal(
 
     s.taglist = get_taglist(s)
 
+    local client_count_widget = c_count_table.client_count_widget
+
     -- s.tasklist = get_tasklist(s)
 
     -- s.systray = get_systray(s)
@@ -100,7 +112,7 @@ screen.connect_signal(
           {
             -- mylauncher,
             app_launcher,
-            s.tasklist,
+            -- s.tasklist,
             s.mypromptbox,
             separator,
 
@@ -112,6 +124,7 @@ screen.connect_signal(
         },
         { -- Middle widgets
           {
+            client_count_widget,
             s.taglist,
             s.layoutbox,
 

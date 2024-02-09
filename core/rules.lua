@@ -6,6 +6,7 @@ require("awful.autofocus")
 local ruled = require("ruled")
 
 local popup_tasklist = require("widgets.popup_tasklist")
+local c_count_table = require("widgets.client_count")
 local systray = require("widgets.tray")
 
 
@@ -271,6 +272,18 @@ client.connect_signal(
     end
   end
 )
+
+client.connect_signal(
+  "focus",
+  function()
+    local current_tag = awful.screen.focused().selected_tag
+    local c_count = #current_tag:clients()
+
+    -- c_count_table.client_count = c_count
+    c_count_table.update(c_count)
+  end
+)
+
 
 -- gears.timer {
 --   timeout   = 1, -- Time between checks

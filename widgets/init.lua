@@ -1,4 +1,5 @@
 require("widgets.app_launcher")
+require("widgets.client_count")
 require("widgets.battery")
 --require("widgets.brightness")
 require("widgets.date")
