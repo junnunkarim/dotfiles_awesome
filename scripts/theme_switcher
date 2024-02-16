@@ -109,7 +109,7 @@ case $select in
     switch_theme gruvbox
     switch_gtk_theme Gruvbox-Dark
     switch_alacritty_colorscheme gruvbox
-    switch_nvim_colorscheme base16-gruvbox-material-dark-hard
+    switch_nvim_colorscheme base16-gruvbox-dark-medium
     switch_btop_colorscheme gruvbox_dark
     switch_helix_colorscheme gruvbox_dark_hard
     ;;

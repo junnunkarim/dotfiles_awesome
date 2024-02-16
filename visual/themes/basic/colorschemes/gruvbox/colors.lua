@@ -24,9 +24,9 @@ app_launcher_colors = {
 battery_colors = {
   fg = colors.black,
   fg_icon = colors.black,
-  bg = colors.green2,
-  bg_icon = colors.green1,
-  border = colors.green1,
+  bg = colors.blue2,
+  bg_icon = colors.blue1,
+  border = colors.blue1,
 }
 
 time_colors = {
@@ -54,14 +54,14 @@ tray_colors = {
 ---}}}
 
 taglist_colors = {
-  fg = colors.white,
-  bg = colors.blue2,
-  bg_focus = colors.blue1,
+  fg = colors.gray1,
+  bg = colors.green2,
+  bg_focus = colors.green1,
   bg_urgent = colors.black,
   fg_focus = colors.black,
   fg_occupied = colors.black,
   fg_urgent = colors.red1,
-  border = colors.blue1,
+  border = colors.green1,
   hover = colors.gray2,
 }
 
@@ -77,7 +77,7 @@ tasklist_colors = {
 
 titlebar_colors = {
   border = colors.black,
-  border_focus = colors.blue2,
+  border_focus = colors.green2,
 }
 
 bar_colors = {

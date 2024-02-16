@@ -30,7 +30,7 @@ local theme = {
 
     -- TODO: need to implement more robust and modular solution
     -- breaks hotkeys_popup widget if the values aren't set
-    bg_normal            = taglist_colors.bg,
+    bg_normal            = TRANSPARENT,
     bg_focus             = taglist_colors.bg_focus,
     bg_urgent            = taglist_colors.bg_urgent,
     bg_minimize          = tasklist_colors.bg_minimize,

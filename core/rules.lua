@@ -265,7 +265,7 @@ client.connect_signal(
 -- enable popup tasklist widget with auto-hide
 client.connect_signal(
   "focus",
-  function(s)
+  function()
     if not popup_tasklist.check_visibility() then
       popup_tasklist.toggle_visibility() -- show popup on focus change
       popup_tasklist.auto_hide(2)        -- hides the popup after 2 seconds
@@ -275,6 +275,7 @@ client.connect_signal(
 
 client.connect_signal(
   "focus",
+  -- "property::selected",
   function()
     local current_tag = awful.screen.focused().selected_tag
     local c_count = #current_tag:clients()

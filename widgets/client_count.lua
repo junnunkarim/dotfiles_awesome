@@ -1,4 +1,3 @@
-local awful = require("awful")
 local gears = require("gears")
 local wibox = require("wibox")
 
@@ -34,7 +33,7 @@ c_count_table.client_count_widget_core = wibox.widget {
       id = "core_text",
       font = "Iosevka Nerd Font Mono 18",
       markup = '<span color="' ..
-          battery_colors.fg .. '">' .. tostring(0) .. '</span>',
+          battery_colors.fg .. '"><b>' .. tostring(0) .. '</b></span>',
       halign = "center",
       valign = "center",
       widget = wibox.widget.textbox

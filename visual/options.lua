@@ -1,4 +1,4 @@
 THEME = "basic"
-COLORSCHEME = "nord"
+COLORSCHEME = "everforest"
 
 THEME_COLORSCHEME = THEME .. ".colorschemes." .. COLORSCHEME

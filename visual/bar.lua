@@ -28,63 +28,63 @@ screen.connect_signal(
     --
 
     --
-    awful.tag.add("󰲠", {
+    awful.tag.add("", {
       index = 1,
       screen = s,
       layout = awful.layout.suit.tile,
       selected = true,
     })
     --󱃖
-    awful.tag.add("󰲢", {
+    awful.tag.add("", {
       index = 2,
       screen = s,
       layout = awful.layout.suit.max,
       --selected = true,
     })
     --
-    awful.tag.add("󰲤", {
+    awful.tag.add("", {
       index = 3,
       screen = s,
       layout = awful.layout.suit.max,
       --selected = true,
     })
     --
-    awful.tag.add("󰲦", {
+    awful.tag.add("", {
       index = 4,
       screen = s,
       layout = awful.layout.suit.max,
       --selected = true,
     })
     --
-    awful.tag.add("󰲨", {
+    awful.tag.add("", {
       index = 5,
       screen = s,
       layout = awful.layout.suit.max,
       --selected = true,
     })
     --
-    awful.tag.add("󰲪", {
+    awful.tag.add("", {
       index = 6,
       screen = s,
       layout = awful.layout.suit.max,
       --selected = true,
     })
     --󰚢
-    awful.tag.add("󰲬", {
+    awful.tag.add("", {
       index = 7,
       screen = s,
       layout = awful.layout.suit.max,
       --selected = true,
     })
     --󰸳
-    awful.tag.add("󰲮", {
+    awful.tag.add("", {
       index = 8,
       screen = s,
       layout = awful.layout.suit.max,
       --selected = true,
     })
     --
-    awful.tag.add("󰲰", {
+    awful.tag.add("", {
       index = 9,
       screen = s,
       layout = awful.layout.suit.max,

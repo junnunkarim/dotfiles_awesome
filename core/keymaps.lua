@@ -1,5 +1,7 @@
 local awful = require("awful")
 local naughty = require("naughty")
+local beautiful = require("beautiful")
+local gears = require("gears")
 local hotkeys_popup = require("awful.hotkeys_popup")
 
 require("core.utils")
@@ -13,6 +15,31 @@ local systray = require("widgets.tray")
 -- #------------------ Global Keybindings ------------------# --
 -- ---------------------------------------------------------- --
 local global_keybindings = {
+  awful.key({
+    modifiers = { SUPER, "Shift" },
+    key = "n",
+    on_press = function()
+      local tag = awful.screen.focused().selected_tag
+      local client_count = #tag:clients()
+
+      naughty.notify({
+        title        = "test",
+        text         = "client count: " .. client_count,
+        font         = "Iosevka Nerd Font Mono 20",
+        bg           = "#282828",
+        fg           = "#ebdbb2",
+        border_width = 0,
+        -- border_color = "#98971a",
+        shape        = function(cr, w, h)
+          return gears.shape.rounded_rect(cr, w, h, 20)
+        end,
+        margin       = 30,
+        ontop        = true,
+      })
+    end,
+    description = "Swap with clients clockwise",
+    group = "client",
+  }),
   awful.key({
     modifiers = { SUPER, "Shift" },
     key = "j",
