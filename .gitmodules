@@ -1,9 +1,0 @@
-[submodule "custom_modules/bling"]
-	path = custom_modules/bling
-	url = https://github.com/BlingCorp/bling
-[submodule "custom_modules/rubato"]
-	path = custom_modules/rubato
-	url = https://github.com/andOrlando/rubato
-[submodule "custom_modules/upower"]
-	path = custom_modules/upower
-	url = https://github.com/Aire-One/awesome-battery_widget
